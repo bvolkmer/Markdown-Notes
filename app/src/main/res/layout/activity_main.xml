@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:background="?android:colorPrimary"
+        android:id="@+id/toolbar">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location:"
+        android:id="@+id/location"
+        android:elevation="5dp"
+        />
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/note_card_recycler_view"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:elevation="5dp"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/add_button"
+            android:elevation="10dp"
+            android:onClick="addItem"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="20dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:focusable="true"
+            app:fabSize="normal"/>
+    </RelativeLayout>
+
+</LinearLayout>

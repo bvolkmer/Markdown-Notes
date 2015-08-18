@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/note_card"
+    android:scrollbars="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginTop="10dp"
+    card_view:cardElevation="1dp"
+    tools:context=".MainActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:clickable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/note_card_filename"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:text="Empty title"
+            android:textSize="10sp"/>
+
+        <WebView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="1dp"
+            android:id="@+id/note_card_content"
+            android:background="#0000"
+            android:backgroundTint="#0000"/>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
