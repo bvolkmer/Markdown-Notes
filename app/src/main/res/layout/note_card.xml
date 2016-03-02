@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/note_card"
+    android:scrollbars="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    card_view:cardElevation="1dp"
+    tools:context=".MainActivity"
+    android:clickable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/note_card_filename"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:text="Empty title"
+            android:textSize="12sp"
+            android:textColor="?android:colorAccent" />
+
+        <de.x4fyr.markdown_notes.TouchHijackingLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:id="@+id/webView_Layout">
+
+            <WebView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/note_card_content"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:longClickable="false"
+                android:layout_marginEnd="1dp"/>
+
+            <WebView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/note_card_content_preview"
+                android:layout_weight="5"/>
+
+        </de.x4fyr.markdown_notes.TouchHijackingLinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:orientation="horizontal"
+            android:id="@+id/tools_layout">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@android:color/primary_text_light"
+                android:gravity="center"
+                android:id="@+id/edit_textView"
+                android:text="Edit"
+                android:onClick="viewItem"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@android:color/primary_text_light"
+                android:gravity="center"
+                android:id="@+id/delete_textView"
+                android:text="Delete" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

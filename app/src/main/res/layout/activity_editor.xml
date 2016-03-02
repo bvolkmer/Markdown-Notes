@@ -1,0 +1,87 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="de.x4fyr.markdown_notes.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:background="?android:colorPrimary"
+        android:id="@+id/actionbar_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:layout_margin="10dp"
+                android:textSize="20sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Filename:"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:textAlignment="viewEnd"/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/filename_editText"
+                    android:text=".md"
+                    android:inputType="textUri"
+                    android:imeOptions="actionGo"
+                    android:layout_weight="5"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <fragment
+            android:id="@+id/editor_fragment"
+            android:name="de.x4fyr.markdown_notes.EditorFragment"
+            tools:layout="@layout/fragment_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_height="match_parent"
+            android:layout_width="1dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:background="?android:colorAccent" />
+
+        <fragment
+            android:id="@+id/view_fragment"
+            android:name="de.x4fyr.markdown_notes.ViewFragment"
+            tools:layout="@layout/fragment_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+</LinearLayout>
