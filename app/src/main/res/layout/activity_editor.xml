@@ -9,36 +9,25 @@
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="?attr/actionBarSize"
+        android:minHeight="?android:attr/actionBarSize"
         android:background="?android:colorPrimary"
         android:id="@+id/actionbar_toolbar">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="10dp"
-            android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+        >
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/app_name"
-                android:layout_margin="10dp"
-                android:textSize="20sp"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Filename:"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:textAlignment="viewEnd"/>
+            />
 
-                <EditText
+            <EditText
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/filename_editText"
@@ -46,8 +35,6 @@
                     android:inputType="textUri"
                     android:imeOptions="actionGo"
                     android:layout_weight="5"/>
-
-            </LinearLayout>
 
         </LinearLayout>
 

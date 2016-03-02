@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationModel
+  ns = "http://schemas.android.com?import=com.android.tools.idea.editors.navigation.model.*">
+  <locations  
+    class = "java.util.ArrayList">
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "de.x4fyr.markdown_notes.NoteDetailActivity"/>
+      <point      
+        x = "5328"      
+        y = "801"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "de.x4fyr.markdown_notes.MainActivity"/>
+      <point      
+        x = "330"      
+        y = "94"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "de.x4fyr.markdown_notes.EditorActivity"/>
+      <point      
+        x = "1942"      
+        y = "84"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "de.x4fyr.markdown_notes.NoteListActivity"/>
+      <point      
+        x = "3706"      
+        y = "1084"/>
+    </statePointEntry>
+  </locations>
+</navigationModel>

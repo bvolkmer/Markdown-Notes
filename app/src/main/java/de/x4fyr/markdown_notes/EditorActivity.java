@@ -1,11 +1,7 @@
 package de.x4fyr.markdown_notes;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.app.FragmentTabHost;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -108,6 +104,9 @@ public class EditorActivity extends AppCompatActivity {
         preview = (WebView) findViewById(R.id.editor_preview);
         editorEditText = (EditText) findViewById(R.id.editor_textEdit);
 
+        setSupportActionBar(actionbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         //Handle Intents
         Intent intent = getIntent();
         File noteFile = (File) intent.getSerializableExtra("de.x4fyr.markdown_notes.CURRENT_NOTE");
@@ -144,11 +143,13 @@ public class EditorActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()){
+            case R.id.action_settings:
+                return true;
+            case android.R.id.home:
+                supportFinishAfterTransition();
         }
 
         return super.onOptionsItemSelected(item);
@@ -168,4 +169,5 @@ public class EditorActivity extends AppCompatActivity {
         else Toast.makeText(this, "Could not safe note", Toast.LENGTH_SHORT).show();
         super.onStop();
     }
+
 }

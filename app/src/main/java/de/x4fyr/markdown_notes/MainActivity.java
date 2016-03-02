@@ -1,18 +1,21 @@
 package de.x4fyr.markdown_notes;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.webkit.WebView;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -118,6 +121,18 @@ public class MainActivity extends AppCompatActivity {
         locationEditText = (EditText) findViewById(R.id.location_editText);
         locationEditText.setText(folder.getAbsolutePath());
         locationEditText.setOnEditorActionListener(locationEditTextListener);
+        findViewById(R.id.add_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, EditorActivity.class));
+            }
+        });
+        findViewById(R.id.note_card_recycler_view).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, EditorActivity.class));
+            }
+        });
     }
 
     @Override
@@ -162,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
     public void addItem(View view){
         Intent intent = new Intent(this, EditorActivity.class);
         intent.putExtra("de.x4fyr.markdown_notes.CURRENT_NOTE", folder);
-        startActivity(intent);
+        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
     }
 
     public void viewItem(View v){
@@ -170,7 +185,9 @@ public class MainActivity extends AppCompatActivity {
         String filename = ((TextView) v.findViewById(R.id.note_card_filename)).getText().toString().trim();
         File file = new File(folder.getName() + "/" + filename);
         intent.putExtra("de.x4fyr.markdown_notes.CURRENT_NOTE", file);
-        startActivity(intent);
+        WebView wv_title = ((WebView) v.findViewById(R.id.note_card_content));
+        ActivityOptions options  =ActivityOptions.makeSceneTransitionAnimation(this, wv_title, "rendered_view");
+        startActivity(intent, options.toBundle());
     }
 
 }

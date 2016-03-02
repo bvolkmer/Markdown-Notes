@@ -9,6 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#fff"
-        android:id="@+id/editor_preview"/>
+        android:id="@+id/editor_preview"
+        android:transitionName="rendered_view"
+    />
 
 </RelativeLayout>

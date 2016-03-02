@@ -39,13 +39,16 @@
                 android:layout_weight="1"
                 android:clickable="false"
                 android:longClickable="false"
-                android:layout_marginEnd="1dp"/>
+                android:layout_marginEnd="1dp"
+                android:transitionName="rendered_view"
+            />
 
             <WebView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/note_card_content_preview"
-                android:layout_weight="5"/>
+                android:layout_weight="5"
+            />
 
         </de.x4fyr.markdown_notes.TouchHijackingLinearLayout>
 
