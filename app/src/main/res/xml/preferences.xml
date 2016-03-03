@@ -14,5 +14,25 @@
                 android:hint="Navigate in main menu and copy the string."
         />
     </PreferenceCategory>
+    <PreferenceCategory
+            android:title="Licenses"
+            android:key="pref_key_licenses_settings"
+    >
+        <Preference
+                android:title="App Licence"
+                android:summary="This application is licensed under the GNU GENERAL PUBLIC LICENCE v3+"
+        >
+            <intent android:action="android.intent.action.VIEW"
+                    android:data="http://www.gnu.org/licenses/gpl.html" />
+        </Preference>
+        <Preference
+                android:title="Markdown Parser"
+                android:summary="marked by Christopher Jeffrey"
+        >
+            <intent android:action="android.intent.action.VIEW"
+                    android:data="https://github.com/chjj/marked/tree/88ce4df47c4d994dc1b1df1477a21fb893e11ddc" />
+        </Preference>
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
