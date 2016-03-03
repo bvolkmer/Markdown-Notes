@@ -99,6 +99,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
         Collections.sort(this.notes, (a,b) -> a.file.compareTo(b.file));
         Collections.sort(notes, (a,b) -> a.file.compareTo(b.file));
         this.notes.addAll(notes);
+        this.notes.add(0, new Note(this.superActivity.folder.getParentFile()));
         this.superActivity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
         this.scale = metrics.density;
     }
@@ -115,14 +116,18 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.note = notes.get(position);
-        holder.vFilename.setText(notes.get(position).filename);
+        if (position == 0){
+            holder.vFilename.setText(".. (Go up)");
+        } else {
+            holder.vFilename.setText(notes.get(position).filename);
+        }
         holder.vToolsLayout.getLayoutParams().height = 0;
         holder.vToolsLayout.requestLayout();
         if (notes.get(position).folderDummy) {
             holder.vWebViewLayout.getLayoutParams().height = 0;
         } else {
             // Set style
-            holder.vWebViewLayout.getLayoutParams().height = (int) (70*scale);
+            holder.vWebViewLayout.getLayoutParams().height = (int) (70 * scale);
             holder.vWebViewLayout.requestLayout();
             holder.vContentPreview.setInitialScale(50); //TODO: Set scale dynamic on line number
             // Set formattedContent

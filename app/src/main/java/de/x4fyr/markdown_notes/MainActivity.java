@@ -59,9 +59,6 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Note> notes = new ArrayList<>();
 
         class MarkdownFileFilter implements FileFilter {
-            public MarkdownFileFilter() {
-            }
-
             public boolean accept(File file) {
                 try {
                     return (file.isFile()
