@@ -3,8 +3,10 @@ package de.x4fyr.markdown_notes;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Environment;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -24,6 +26,8 @@ import java.io.FileFilter;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    SharedPreferences sharedPref;
 
     public File folder = Environment.getExternalStorageDirectory();
 
@@ -53,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
+
     private final EditText.OnEditorActionListener locationEditTextListener = this::changeFolderEditorAction;
 
     private ArrayList<Note> getNotesFromFolder(File folder) {
@@ -69,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         File[] files = folder.listFiles(new MarkdownFileFilter());
+
 
         if (files.length != 0) {
             for (File file : files) {
@@ -100,6 +106,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        String strFolder = sharedPref.getString(getString(R.string.pref_startup_folder_key), "");
+
+        if (!strFolder.equals("")) {
+            folder = new File(strFolder);
+            if (!folder.exists() || !folder.isDirectory() || !folder.canRead()) {
+                folder = Environment.getExternalStorageDirectory();
+            }
+        }
+
+        Boolean existing = folder.canRead();
+        File[] files = folder.listFiles();
 
         //Make toolbar as actionbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -126,8 +144,9 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
             return true;
         }
 
@@ -137,7 +156,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-
         createCards(getNotesFromFolder(folder));
     }
 

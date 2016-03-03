@@ -1,0 +1,4 @@
+<resources>
+
+    <string name="pref_startup_folder_key">pref_key_startup_folder</string>
+</resources>

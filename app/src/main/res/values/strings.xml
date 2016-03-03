@@ -3,5 +3,6 @@
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_editor">editor</string>
+    <string name="title_activity_settings">editor</string>
 
 </resources>

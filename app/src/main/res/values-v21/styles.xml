@@ -6,4 +6,10 @@
         <item name="android:windowActivityTransitions">true</item>
 
     </style>
+    <style name="AppThemeWithActionBar" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:colorPrimary">#9c27b0</item>
+
+        <item name="android:windowActivityTransitions">true</item>
+
+    </style>
 </resources>
