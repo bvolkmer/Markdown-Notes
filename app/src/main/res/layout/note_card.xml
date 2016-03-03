@@ -9,7 +9,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
-    card_view:cardElevation="1dp"
+    card_view:cardElevation="2dp"
     tools:context=".MainActivity"
     android:clickable="true">
 

@@ -1,11 +1,12 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
-
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        tools:context=".MainActivity"
+>
 
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
@@ -13,7 +14,9 @@
         android:padding="10dp"
         android:minHeight="?android:attr/actionBarSize"
         android:background="?android:colorPrimary"
-        android:id="@+id/toolbar">
+        android:id="@+id/toolbar"
+        android:elevation="5dp"
+    >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,7 +28,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/app_name"
                 android:layout_margin="10dp"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                android:textColor="?android:textColorPrimaryInverse"
+            />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -35,17 +40,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Location:"
-                    android:gravity="right"
-                    android:layout_weight="1"/>
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:labelFor="@+id/location_editText"
+                    android:textColor="?android:textColorPrimaryInverse"
+                />
 
                 <EditText
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/location_editText"
+                    android:id="@id/location_editText"
                     android:text="/sdcard/"
                     android:inputType="textUri"
                     android:imeOptions="actionGo"
-                    android:layout_weight="5"/>
+                    android:layout_weight="5"
+                    android:textColor="?android:textColorPrimaryInverse"
+                />
 
             </LinearLayout>
 
@@ -56,7 +66,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp">
+        android:paddingBottom="@dimen/activity_horizontal_margin"
+        android:paddingLeft="@dimen/activity_vertical_margin"
+        android:paddingRight="@dimen/activity_vertical_margin"
+    >
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/note_card_recycler_view"

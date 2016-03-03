@@ -21,25 +21,21 @@ import java.util.Collections;
 import java.util.List;
 
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
-    private List<Note> notes = new ArrayList<Note>();
-    float scale;
-    MainActivity superActivity;
+    private final List<Note> notes = new ArrayList<>();
+    private final float scale;
+    private final MainActivity superActivity;
 
-    // Provide a reference to the views for each data item
-    // Complex data items may need more than one view per item, and
-    // you provide access to all the views for a data item in a view holder
     public class ViewHolder extends RecyclerView.ViewHolder {
-        // each data item is just a string in this case
         Note note;
 
-        public CardView mCardView;
-        protected TextView vFilename;
-        protected WebView vContent;
-        protected WebView vContentPreview;
-        protected LinearLayout vWebViewLayout;
-        protected LinearLayout vToolsLayout;
-        protected TextView vEdit;
-        protected TextView vDelete;
+        public final CardView mCardView;
+        final TextView vFilename;
+        final WebView vContent;
+        final WebView vContentPreview;
+        final LinearLayout vWebViewLayout;
+        final LinearLayout vToolsLayout;
+        final TextView vEdit;
+        final TextView vDelete;
 
 
         private boolean openToolbar(View v) {
@@ -68,9 +64,9 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
             //TODO: make safety dialog
             if (note.file.delete()) {
                 superActivity.onStart();
-                Toast.makeText(superActivity, "Deletion successfull", Toast.LENGTH_SHORT).show();
+                Toast.makeText(superActivity, "Deletion successful", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(superActivity, "Deletion not successfull", Toast.LENGTH_SHORT).show();
+                Toast.makeText(superActivity, "Deletion not successful", Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -92,7 +88,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
         }
     }
 
-    // Provide a suitable constructor (depends on the kind of dataset)
     public NoteAdapter(List<Note> notes, Activity superActivity) {
         this.superActivity = (de.x4fyr.markdown_notes.MainActivity) superActivity;
         for (File file: this.superActivity.folder.listFiles()) {
@@ -108,20 +103,15 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
         this.scale = metrics.density;
     }
 
-    // Create new views (invoked by the layout manager)
     @Override
     public NoteAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                      int viewType) {
-        // create a new view
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.note_card, parent, false);
-        // set the view's size, margins, paddings and layout parameters
 
-        ViewHolder vh = new ViewHolder((CardView)v);
-        return vh;
+        return new ViewHolder((CardView) v);
     }
 
-    // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.note = notes.get(position);
@@ -135,10 +125,10 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
             holder.vWebViewLayout.getLayoutParams().height = (int) (70*scale);
             holder.vWebViewLayout.requestLayout();
             holder.vContentPreview.setInitialScale(50); //TODO: Set scale dynamic on line number
-            // Set formatedContent
+            // Set formattedContent
             holder.vFilename.setText(notes.get(position).filename);
-            holder.vContent.loadData(notes.get(position).formatedContent, "text/html", null);
-            holder.vContentPreview.loadData(notes.get(position).formatedContent, "text/html", null);
+            holder.vContent.loadData(notes.get(position).formattedContent, "text/html", null);
+            holder.vContentPreview.loadData(notes.get(position).formattedContent, "text/html", null);
             // Set WebView settings
             holder.vContent.setBackgroundColor(Color.TRANSPARENT);
             holder.vContentPreview.setBackgroundColor(Color.TRANSPARENT);
@@ -149,7 +139,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
         }
     }
 
-    // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
         return notes.size();

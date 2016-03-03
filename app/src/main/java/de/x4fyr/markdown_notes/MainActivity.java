@@ -1,6 +1,5 @@
 package de.x4fyr.markdown_notes;
 
-import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
@@ -23,14 +22,12 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.FileFilter;
 import java.util.ArrayList;
-import java.util.logging.Logger;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<Note> notes = new ArrayList<Note>();
     public File folder = Environment.getExternalStorageDirectory();
 
-    private Context mainContext = this;
+    private final Context mainContext = this;
 
     private EditText locationEditText;
 
@@ -56,10 +53,10 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
-    protected EditText.OnEditorActionListener locationEditTextListener = this::changeFolderEditorAction;
+    private final EditText.OnEditorActionListener locationEditTextListener = this::changeFolderEditorAction;
 
-    protected ArrayList<Note> getNotesFromFolder(File folder) {
-        ArrayList<Note> notes = new ArrayList<Note>();
+    private ArrayList<Note> getNotesFromFolder(File folder) {
+        ArrayList<Note> notes = new ArrayList<>();
 
         class MarkdownFileFilter implements FileFilter {
             public MarkdownFileFilter() {
@@ -87,25 +84,17 @@ public class MainActivity extends AppCompatActivity {
         return notes;
     }
 
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-
-    protected void createCards(ArrayList<Note> notes){
+    private void createCards(ArrayList<Note> notes){
 
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.note_card_recycler_view);
+        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.note_card_recycler_view);
 
-        // use this setting to improve performance if you know that changes
-        // in formatedContent do not change the layout size of the RecyclerView
         mRecyclerView.setHasFixedSize(true);
 
-        // use a linear layout manager
-        mLayoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        // specify an adapter (see also next example)
-        mAdapter = new NoteAdapter(notes, this);
+        RecyclerView.Adapter mAdapter = new NoteAdapter(notes, this);
         mRecyclerView.setAdapter(mAdapter);
 
     }
@@ -152,8 +141,7 @@ public class MainActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
 
-        notes = getNotesFromFolder(folder);
-        createCards(notes);
+        createCards(getNotesFromFolder(folder));
     }
 
     @Override

@@ -16,8 +16,6 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.inputmethod.EditorInfo;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -25,19 +23,17 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.logging.Logger;
 
 public class EditorActivity extends AppCompatActivity {
 
     private Note note;
     private File folder;
 
-    private Context mainContext = this;
+    private final Context mainContext = this;
     private Toolbar actionbar;
     private EditText filenameEditText;
 
     private ViewPager mPager;
-    private PagerAdapter mPagerAdapter;
 
     private Fragment viewFragment;
     private Fragment editorFragment;
@@ -83,9 +79,9 @@ public class EditorActivity extends AppCompatActivity {
         return true;
 
     }
-    protected EditText.OnEditorActionListener filenameEditTextListener = this::filenameChangeEditorAction;
+    private final EditText.OnEditorActionListener filenameEditTextListener = this::filenameChangeEditorAction;
 
-    public TextWatcher editorWatcher = new TextWatcher() {
+    public final TextWatcher editorWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -117,7 +113,7 @@ public class EditorActivity extends AppCompatActivity {
         File noteFile = (File) intent.getSerializableExtra("de.x4fyr.markdown_notes.CURRENT_NOTE");
         folder = new File(noteFile.getAbsolutePath());
 
-        //Handle newfile
+        //Handle new file
         if (noteFile.isFile()) {
             note = new Note(noteFile);
             //TODO: Show fragments
@@ -133,7 +129,7 @@ public class EditorActivity extends AppCompatActivity {
         editorFragment = new EditorFragment();
 
         mPager = (ViewPager) findViewById(R.id.pager);
-        mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
+        PagerAdapter mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
 
         filenameEditText.setText(note.filename);
@@ -168,11 +164,6 @@ public class EditorActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
     }
 
     @Override
@@ -232,9 +223,5 @@ public class EditorActivity extends AppCompatActivity {
 
     public Note getNote() {
         return note;
-    }
-
-    public File getFolder() {
-        return folder;
     }
 }

@@ -11,7 +11,9 @@
         android:layout_height="wrap_content"
         android:minHeight="?android:attr/actionBarSize"
         android:background="?android:colorPrimary"
-        android:id="@+id/actionbar_toolbar">
+        android:id="@+id/actionbar_toolbar"
+        android:elevation="5dp"
+    >
 
         <LinearLayout
                 android:layout_width="match_parent"
@@ -24,17 +26,21 @@
                     android:layout_height="wrap_content"
                     android:text="Filename:"
                     android:layout_weight="1"
-                    android:gravity="right"
+                    android:gravity="end"
+                    android:labelFor="@+id/filename_editText"
+                    android:textColor="?android:textColorPrimaryInverse"
             />
 
             <EditText
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/filename_editText"
+                    android:id="@id/filename_editText"
                     android:text=".md"
                     android:inputType="textUri"
                     android:imeOptions="actionGo"
-                    android:layout_weight="5"/>
+                    android:layout_weight="5"
+                    android:textColor="?android:textColorPrimaryInverse"
+            />
 
         </LinearLayout>
 
@@ -45,6 +51,9 @@
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_vertical_margin"
     >
 
     </android.support.v4.view.ViewPager>
