@@ -23,6 +23,7 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.FileFilter;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -121,18 +122,8 @@ public class MainActivity extends AppCompatActivity {
         locationEditText = (EditText) findViewById(R.id.location_editText);
         locationEditText.setText(folder.getAbsolutePath());
         locationEditText.setOnEditorActionListener(locationEditTextListener);
-        findViewById(R.id.add_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, EditorActivity.class));
-            }
-        });
-        findViewById(R.id.note_card_recycler_view).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, EditorActivity.class));
-            }
-        });
+        findViewById(R.id.add_button).setOnClickListener(this::addItem);
+        findViewById(R.id.note_card_recycler_view).setOnClickListener(this::viewItem);
     }
 
     @Override
@@ -177,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
     public void addItem(View view){
         Intent intent = new Intent(this, EditorActivity.class);
         intent.putExtra("de.x4fyr.markdown_notes.CURRENT_NOTE", folder);
-        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+        startActivity(intent);
     }
 
     public void viewItem(View v){
@@ -186,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
         File file = new File(folder.getName() + "/" + filename);
         intent.putExtra("de.x4fyr.markdown_notes.CURRENT_NOTE", file);
         WebView wv_title = ((WebView) v.findViewById(R.id.note_card_content));
-        ActivityOptions options  =ActivityOptions.makeSceneTransitionAnimation(this, wv_title, "rendered_view");
+        ActivityOptions options  = ActivityOptions.makeSceneTransitionAnimation(this, wv_title, "rendered_view");
         startActivity(intent, options.toBundle());
     }
 

@@ -40,35 +40,13 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <LinearLayout
+    <android.support.v4.view.ViewPager
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:baselineAligned="false">
+    >
 
-        <fragment
-            android:id="@+id/editor_fragment"
-            android:name="de.x4fyr.markdown_notes.EditorFragment"
-            tools:layout="@layout/fragment_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-        <View
-            android:layout_height="match_parent"
-            android:layout_width="1dp"
-            android:paddingTop="3dp"
-            android:paddingBottom="3dp"
-            android:background="?android:colorAccent" />
-
-        <fragment
-            android:id="@+id/view_fragment"
-            android:name="de.x4fyr.markdown_notes.ViewFragment"
-            tools:layout="@layout/fragment_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-    </LinearLayout>
+    </android.support.v4.view.ViewPager>
 
 </LinearLayout>

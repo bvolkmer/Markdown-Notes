@@ -20,18 +20,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".NoteListActivity"
-            android:label="@string/title_note_list" >
-        </activity>
-        <activity
-            android:name=".NoteDetailActivity"
-            android:label="@string/title_note_detail"
-            android:parentActivityName=".NoteListActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="de.x4fyr.markdown_notes.NoteListActivity" />
-        </activity>
-        <activity
             android:name=".EditorActivity"
             android:label="@string/title_activity_editor"
             android:parentActivityName=".MainActivity" >

@@ -81,12 +81,4 @@
             app:fabSize="normal"/>
     </RelativeLayout>
 
-    <fragment
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:name="de.x4fyr.markdown_notes.EditorFragment"
-        android:id="@+id/editor_fragment"
-        android:layout_weight="1"
-        tools:layout="@layout/fragment_editor" />
-
 </LinearLayout>

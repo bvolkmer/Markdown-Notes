@@ -2,6 +2,11 @@ package de.x4fyr.markdown_notes;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -20,6 +25,7 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Logger;
 
 public class EditorActivity extends AppCompatActivity {
 
@@ -29,8 +35,12 @@ public class EditorActivity extends AppCompatActivity {
     private Context mainContext = this;
     private Toolbar actionbar;
     private EditText filenameEditText;
-    WebView preview;
-    EditText editorEditText;
+
+    private ViewPager mPager;
+    private PagerAdapter mPagerAdapter;
+
+    private Fragment viewFragment;
+    private Fragment editorFragment;
 
     private boolean filenameChangeEditorAction (TextView v, int actionId, KeyEvent event) {
         if (actionId == EditorInfo.IME_ACTION_GO){// && event.getAction() == KeyEvent.ACTION_DOWN) {
@@ -75,7 +85,7 @@ public class EditorActivity extends AppCompatActivity {
     }
     protected EditText.OnEditorActionListener filenameEditTextListener = this::filenameChangeEditorAction;
 
-    private TextWatcher editorWatcher = new TextWatcher() {
+    public TextWatcher editorWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -83,10 +93,7 @@ public class EditorActivity extends AppCompatActivity {
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            int posX = preview.getScrollX();
-            int posY = preview.getScrollY();
-            note.changeNoteContent(s.toString(), posX, posY);
-            preview.loadDataWithBaseURL(folder.getAbsolutePath(), note.formatedContent, "text/html", null, null);
+            note.changeNoteContent(s.toString());
             //Toast.makeText(mainContext, note.content, Toast.LENGTH_SHORT).show();
         }
 
@@ -101,8 +108,6 @@ public class EditorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_editor);
         actionbar = (Toolbar) findViewById(R.id.actionbar_toolbar);
         filenameEditText = (EditText) findViewById(R.id.filename_editText);
-        preview = (WebView) findViewById(R.id.editor_preview);
-        editorEditText = (EditText) findViewById(R.id.editor_textEdit);
 
         setSupportActionBar(actionbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -112,6 +117,7 @@ public class EditorActivity extends AppCompatActivity {
         File noteFile = (File) intent.getSerializableExtra("de.x4fyr.markdown_notes.CURRENT_NOTE");
         folder = new File(noteFile.getAbsolutePath());
 
+        //Handle newfile
         if (noteFile.isFile()) {
             note = new Note(noteFile);
             //TODO: Show fragments
@@ -122,12 +128,22 @@ public class EditorActivity extends AppCompatActivity {
             actionbar.requestLayout();
         }
 
+        //Populate ViewPager
+        viewFragment = new ViewFragment();
+        editorFragment = new EditorFragment();
+
+        mPager = (ViewPager) findViewById(R.id.pager);
+        mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
+        mPager.setAdapter(mPagerAdapter);
+
         filenameEditText.setText(note.filename);
         filenameEditText.setOnEditorActionListener(filenameEditTextListener);
 
-        editorEditText.setText(note.content);
-        editorEditText.addTextChangedListener(editorWatcher);
-        editorEditText.setHorizontallyScrolling(true);
+        Bundle editorArgumentBundle = new Bundle();
+        editorArgumentBundle.putString("note_content", note.content);
+        editorFragment.setArguments(editorArgumentBundle);
+
+        mPager.addOnPageChangeListener(new onPageChangeListener());
     }
 
     @Override
@@ -136,7 +152,6 @@ public class EditorActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_editor, menu);
         return true;
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -158,9 +173,6 @@ public class EditorActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        preview.loadData(note.formatedContent, "text/html", null);
-        WebSettings previewWebSettings = preview.getSettings();
-        previewWebSettings.setJavaScriptEnabled(true);
     }
 
     @Override
@@ -170,4 +182,59 @@ public class EditorActivity extends AppCompatActivity {
         super.onStop();
     }
 
+    @Override
+    public void onBackPressed() {
+        if (mPager.getCurrentItem() == 0) {
+            supportFinishAfterTransition();
+        } else {
+            mPager.setCurrentItem(mPager.getCurrentItem()-1);
+        }
+    }
+
+    private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter{
+
+        public ScreenSlidePagerAdapter(FragmentManager fm){
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            switch (position){
+                case 0:
+                    return viewFragment;
+                case 1:
+                    return editorFragment;
+                default:
+                    throw new IndexOutOfBoundsException();
+            }
+        }
+
+        @Override
+        public int getCount() {
+            return 2;
+        }
+    }
+
+    private class onPageChangeListener extends ViewPager.SimpleOnPageChangeListener {
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            switch (position){
+                case 0:
+                    viewFragment.onResume();
+                    break;
+                case 1:
+                    editorFragment.onResume();
+                    break;
+            }
+
+        }
+    }
+
+    public Note getNote() {
+        return note;
+    }
+
+    public File getFolder() {
+        return folder;
+    }
 }
