@@ -1,5 +1,5 @@
 # Markdown-Notes
-[![Build Status](https://travis-ci.org/X4fyr/Markdown-Notes.svg?branch=master)](https://travis-ci.org/X4fyr/Markdown-Notes)[![codecov.io](https://codecov.io/github/X4fyr/Markdown-Notes/coverage.svg?branch=master)](https://codecov.io/github/X4fyr/Markdown-Notes?branch=master
+[![Build Status](https://travis-ci.org/X4fyr/Markdown-Notes.svg?branch=master)](https://travis-ci.org/X4fyr/Markdown-Notes)[![codecov.io](https://codecov.io/github/X4fyr/Markdown-Notes/coverage.svg?branch=master)](https://codecov.io/github/X4fyr/Markdown-Notes?branch=master)[![Codacy Badge](https://api.codacy.com/project/badge/grade/3781bc5e670448148ec571d01105025e)](https://www.codacy.com/app/benedikt_v/Markdown-Notes)
 
 Android app to edit, create and view markdown files
 
