@@ -4,7 +4,7 @@ os:
   - linux
 android:
   components:
-    - tools-24.4.1
+    - tools
     - build-tools-23.0.2
     - android-23
     - extra-android-m2repository
