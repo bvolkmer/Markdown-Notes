@@ -33,4 +33,4 @@ dependencies {
     compile 'com.android.support:support-v4:23.2.0'
 }
 
-apply plugin: 'me.tatarka.retrolambda'
+//apply plugin: 'me.tatarka.retrolambda'
