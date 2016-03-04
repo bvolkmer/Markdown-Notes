@@ -1,5 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+apply plugin: 'java'
+apply plugin: 'jacoco'
+
 buildscript {
     repositories {
         jcenter()
@@ -17,6 +20,17 @@ allprojects {
     repositories {
         jcenter()
     }
-// Required because retrolambda is on maven central
-//        mavenCentral()
 }
+
+repositories {
+    mavenCentral()
+}
+
+jacocoTestReport {
+	reports {
+		xml.enabled true
+		html.enabled true
+		html.destination 'build/reports/jacoco'
+	}
+}
+
