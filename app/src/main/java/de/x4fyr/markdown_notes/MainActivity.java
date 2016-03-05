@@ -1,24 +1,16 @@
 package de.x4fyr.markdown_notes;
 
-import android.Manifest;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.SystemClock;
 import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -49,11 +41,11 @@ public class MainActivity extends AppCompatActivity {
                 createCards(getNotesFromFolder(folder));
                 locationEditText.setText(folder.getAbsolutePath());
             } else {
-                Toast.makeText(mainContext, "Folder not found", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mainContext, String.format(getString(R.string.toast_folder_does_not_exists), folder.getAbsoluteFile()), Toast.LENGTH_SHORT).show();
                 locationEditText.setText(folder.getAbsoluteFile().toString());
             }
         } catch (Exception e) {
-            Toast.makeText(mainContext, "Not possible", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mainContext, R.string.toast_not_possible, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -71,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
         class MarkdownFileFilter implements FileFilter {
             public boolean accept(File file) {
                 try {
-                    return file.isFile()
-                            && file.getName().substring(file.getName().lastIndexOf(".")).equals(".md");
+                    //noinspection HardCodedStringLiteral
+                    return file.isFile() && file.getName().substring(file.getName().lastIndexOf(".")).equals(".md");
                 } catch (Exception e) {
                     return false;
                 }
@@ -86,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 notes.add(new Note(file));
             }
         } else {
-            Toast.makeText(mainContext, "No notes found. \nSearching for files with \".md\" ending.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mainContext, R.string.toast_no_notes_found, Toast.LENGTH_SHORT).show();
         }
 
         return notes;
@@ -169,6 +161,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void addItem(View view){
         Intent intent = new Intent(this, EditorActivity.class);
+        //noinspection HardCodedStringLiteral
         intent.putExtra("de.x4fyr.markdown_notes.CURRENT_NOTE", folder);
         startActivity(intent);
     }
@@ -177,8 +170,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, EditorActivity.class);
         String filename = ((TextView) v.findViewById(R.id.note_card_filename)).getText().toString().trim();
         File file = new File(folder.getName() + "/" + filename);
+        //noinspection HardCodedStringLiteral
         intent.putExtra("de.x4fyr.markdown_notes.CURRENT_NOTE", file);
         WebView wv_title = ((WebView) v.findViewById(R.id.note_card_content));
+        //noinspection HardCodedStringLiteral
         ActivityOptions options  = ActivityOptions.makeSceneTransitionAnimation(this, wv_title, "rendered_view");
         startActivity(intent, options.toBundle());
     }

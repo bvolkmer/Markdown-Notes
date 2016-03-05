@@ -33,6 +33,7 @@ public class ViewFragment extends Fragment {
     public void onStart() {
         //noinspection ConstantConditions
         preview = (WebView) getView().findViewById(R.id.editor_preview);
+        //noinspection HardCodedStringLiteral
         preview.loadData(editorActivity.getNote().formattedContent, "text/html", null);
         WebSettings previewWebSettings = preview.getSettings();
         previewWebSettings.setJavaScriptEnabled(true);
@@ -42,6 +43,7 @@ public class ViewFragment extends Fragment {
 
     @Override
     public void onResume() {
+        //noinspection HardCodedStringLiteral
         preview.loadData(editorActivity.getNote().formattedContent, "text/html", null);
         WebSettings previewWebSettings = preview.getSettings();
         previewWebSettings.setJavaScriptEnabled(true);

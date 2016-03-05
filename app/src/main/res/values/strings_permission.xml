@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permission_title">This app needs permissions for running!</string>
+    <string name="permission_body">"As this app is tied to the storage as a feature, you need to permit the app to use it. If you don't, you won't be able to use this app, as it can't list, open/view, edit, or delete notes, which are basically all functions this app has. If you click the following button, you will be asked for the permission."</string>
+    <string name="permission_button">Grant permissions</string>
+</resources>

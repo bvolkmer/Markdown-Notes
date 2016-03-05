@@ -25,6 +25,9 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
     private final float scale;
     private final MainActivity superActivity;
 
+    static final int WEB_VIEW_HEIGHT = 70;
+    static final int PREVIEW_SCALE = 50;
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         Note note;
 
@@ -36,7 +39,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
         final LinearLayout vToolsLayout;
         final TextView vEdit;
         final TextView vDelete;
-
 
         private boolean openToolbar(View v) {
             if (!note.folderDummy) {
@@ -55,6 +57,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
                 superActivity.changeFolder(note.file);
             } else {
                 Intent intent = new Intent(superActivity, EditorActivity.class);
+                //noinspection HardCodedStringLiteral
                 intent.putExtra("de.x4fyr.markdown_notes.CURRENT_NOTE", note.file);
                 superActivity.startActivity(intent);
             }
@@ -64,9 +67,9 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
             //TODO: make safety dialog
             if (note.file.delete()) {
                 superActivity.onStart();
-                Toast.makeText(superActivity, "Deletion successful", Toast.LENGTH_SHORT).show();
+                Toast.makeText(superActivity, R.string.toast_deletion_successful, Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(superActivity, "Deletion not successful", Toast.LENGTH_SHORT).show();
+                Toast.makeText(superActivity, R.string.toast_deletion_unsuccessful, Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -117,7 +120,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.note = notes.get(position);
         if (position == 0){
-            holder.vFilename.setText(".. (Go up)");
+            holder.vFilename.setText(R.string.toast_one_folder_up);
         } else {
             holder.vFilename.setText(notes.get(position).filename);
         }
@@ -127,12 +130,14 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
             holder.vWebViewLayout.getLayoutParams().height = 0;
         } else {
             // Set style
-            holder.vWebViewLayout.getLayoutParams().height = (int) (70 * scale);
+            holder.vWebViewLayout.getLayoutParams().height = (int) (WEB_VIEW_HEIGHT * scale);
             holder.vWebViewLayout.requestLayout();
-            holder.vContentPreview.setInitialScale(50); //TODO: Set scale dynamic on line number
+            holder.vContentPreview.setInitialScale(PREVIEW_SCALE); //TODO: Set scale dynamic on line number
             // Set formattedContent
             holder.vFilename.setText(notes.get(position).filename);
+            //noinspection HardCodedStringLiteral
             holder.vContent.loadData(notes.get(position).formattedContent, "text/html", null);
+            //noinspection HardCodedStringLiteral
             holder.vContentPreview.loadData(notes.get(position).formattedContent, "text/html", null);
             // Set WebView settings
             holder.vContent.setBackgroundColor(Color.TRANSPARENT);

@@ -40,34 +40,34 @@ public class EditorActivity extends AppCompatActivity {
         if (actionId == EditorInfo.IME_ACTION_GO){// && event.getAction() == KeyEvent.ACTION_DOWN) {
             File newFile = new File(folder.getAbsolutePath() + "/" + filenameEditText.getText().toString().trim());
             if (note.file.compareTo(newFile) != 0 && newFile.exists() ) {
-                Toast.makeText(mainContext, "File or Folder with that name already exists.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mainContext, R.string.toast_file_folder_exists, Toast.LENGTH_SHORT).show();
                 filenameEditText.setText(note.file.getName());
             } else if (! newFile.getParentFile().exists()) {
-                Toast.makeText(mainContext, "Folder " + newFile.getAbsolutePath() + " does not exist.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mainContext, String.format(getString(R.string.toast_folder_does_not_exists), newFile.getAbsolutePath()), Toast.LENGTH_SHORT).show();
                 filenameEditText.setText(note.file.getName());
             } else { // File is valid
                 if ( note.file.exists()) {
                     if (note.file.compareTo(newFile) == 0) {
-                        Toast.makeText(mainContext, "Same filename entered.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mainContext, R.string.toast_same_filename_entered, Toast.LENGTH_SHORT).show();
                     } else if (note.file.renameTo(newFile)) {
-                        Toast.makeText(mainContext, "File successfully moved", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mainContext, R.string.toast_file_move_successful, Toast.LENGTH_SHORT).show();
                     } else {
-                        Toast.makeText(mainContext, "File could not be moved", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mainContext, R.string.toast_file_move_unsuccessful, Toast.LENGTH_SHORT).show();
                         filenameEditText.setText(note.file.getName());
                     }
                 } else {  // This is a new note, and must be created.
                     try {
                         if (newFile.createNewFile()) {
                             note.file = newFile;
-                            Toast.makeText(mainContext, "File successfully created", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mainContext, R.string.toast_file_create_successful, Toast.LENGTH_SHORT).show();
                             actionbar.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
                             actionbar.requestLayout();
                         } else {
-                            Toast.makeText(mainContext, "File could not be created", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mainContext, R.string.toast_file_create_unsuccessful, Toast.LENGTH_SHORT).show();
                             filenameEditText.setText(note.file.getName());
                         }
                     } catch (IOException e) {
-                        Toast.makeText(mainContext, "File could not be created", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mainContext, R.string.toast_file_create_unsuccessful, Toast.LENGTH_SHORT).show();
                         filenameEditText.setText(note.file.getName());
                     }
                 }
@@ -91,6 +91,7 @@ public class EditorActivity extends AppCompatActivity {
 
         //Handle Intents
         Intent intent = getIntent();
+        //noinspection HardCodedStringLiteral
         File noteFile = (File) intent.getSerializableExtra("de.x4fyr.markdown_notes.CURRENT_NOTE");
         folder = new File(noteFile.getAbsolutePath());
 
@@ -117,6 +118,7 @@ public class EditorActivity extends AppCompatActivity {
         filenameEditText.setOnEditorActionListener(filenameEditTextListener);
 
         Bundle editorArgumentBundle = new Bundle();
+        //noinspection HardCodedStringLiteral
         editorArgumentBundle.putString("note_content", note.content);
         editorFragment.setArguments(editorArgumentBundle);
 
@@ -138,10 +140,10 @@ public class EditorActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         if (note.saveNote()){
-            Toast.makeText(this, "Note saved", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.toast_note_saved, Toast.LENGTH_SHORT).show();
         }
         else {
-            Toast.makeText(this, "Could not safe note", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.toast_note_not_saved, Toast.LENGTH_SHORT).show();
         }
         super.onStop();
     }

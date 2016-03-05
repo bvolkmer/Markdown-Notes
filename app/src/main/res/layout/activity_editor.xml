@@ -24,7 +24,7 @@
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Filename:"
+                    android:text="@string/editor_filename_input"
                     android:layout_weight="1"
                     android:gravity="end"
                     android:labelFor="@+id/filename_editText"
@@ -35,7 +35,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:id="@id/filename_editText"
-                    android:text=".md"
+                    android:hint="@string/editor_filename_hint"
                     android:inputType="textUri"
                     android:imeOptions="actionGo"
                     android:layout_weight="5"

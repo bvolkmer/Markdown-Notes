@@ -39,7 +39,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Location:"
+                    android:text="@string/main_location"
                     android:gravity="end"
                     android:layout_weight="1"
                     android:labelFor="@+id/location_editText"
@@ -50,7 +50,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:id="@id/location_editText"
-                    android:text="/sdcard/"
                     android:inputType="textUri"
                     android:imeOptions="actionGo"
                     android:layout_weight="5"

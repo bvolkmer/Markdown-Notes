@@ -23,7 +23,6 @@
             android:id="@+id/note_card_filename"
             android:layout_width="match_parent"
             android:layout_height="15dp"
-            android:text="Empty title"
             android:textSize="12sp"
             android:textColor="?android:colorAccent" />
 
@@ -66,7 +65,7 @@
                 android:textColor="@android:color/primary_text_light"
                 android:gravity="center"
                 android:id="@+id/edit_textView"
-                android:text="Edit"
+                android:text="@string/main_edit"
                 android:onClick="viewItem"/>
 
             <TextView
@@ -76,7 +75,7 @@
                 android:textColor="@android:color/primary_text_light"
                 android:gravity="center"
                 android:id="@+id/delete_textView"
-                android:text="Delete" />
+                android:text="@string/main_delete" />
 
         </LinearLayout>
 

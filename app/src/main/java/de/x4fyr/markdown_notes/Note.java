@@ -56,6 +56,7 @@ public class Note {
         } catch (FileNotFoundException e) {
             formattedContent = "";
         } catch (IOException e) {
+            //noinspection HardCodedStringLiteral
             Log.e(this.getClass().toString(), "While reading note: ", e);
         }
     }
@@ -73,6 +74,7 @@ public class Note {
             fw.close();
             return true;
         } catch (IOException e) {
+            //noinspection HardCodedStringLiteral
             Log.e(this.getClass().toString(), "While saving note: ", e);
             return false;
         }
