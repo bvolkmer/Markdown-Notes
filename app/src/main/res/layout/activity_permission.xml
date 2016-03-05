@@ -1,0 +1,36 @@
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="de.x4fyr.markdown_notes.PermissionActivity"
+        android:orientation="vertical"
+>
+
+    <TextView
+            android:text="This app needs permissions for running!"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+    />
+    <TextView
+            android:text="As this app is tied to the storage as a feature, you need to permitt the app to use it. If you don't, you won't be able to use this app, as it can't list, open/view, edit, or delete notes, which are basicly all functions this app has. If you click the following button, you will be asked for the permission."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+    />
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grant Permissions"
+            android:id="@+id/button"
+            android:layout_gravity="center"
+            android:onClick="askForPermissions"
+    />
+
+
+</LinearLayout>
