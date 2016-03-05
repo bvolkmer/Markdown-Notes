@@ -5,10 +5,10 @@ android {
     buildToolsVersion "23.0.2"
     defaultConfig {
         applicationId "de.x4fyr.markdown_notes"
-        minSdkVersion 23
+        minSdkVersion 21
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode 300
+        versionName "0.3.0"
     }
     buildTypes {
         release {
