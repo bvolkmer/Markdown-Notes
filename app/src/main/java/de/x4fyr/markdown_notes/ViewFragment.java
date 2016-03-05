@@ -17,10 +17,6 @@ public class ViewFragment extends Fragment {
     private WebView preview;
     private EditorActivity editorActivity;
 
-    public ViewFragment() {
-        super();
-    }
-
     @Override
     public void onAttach(Context context) {
         this.editorActivity = (EditorActivity) context;
@@ -35,6 +31,7 @@ public class ViewFragment extends Fragment {
 
     @Override
     public void onStart() {
+        //noinspection ConstantConditions
         preview = (WebView) getView().findViewById(R.id.editor_preview);
         preview.loadData(editorActivity.getNote().formattedContent, "text/html", null);
         WebSettings previewWebSettings = preview.getSettings();

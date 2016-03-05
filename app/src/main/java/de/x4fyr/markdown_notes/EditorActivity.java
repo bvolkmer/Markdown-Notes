@@ -10,10 +10,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.KeyEvent;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
@@ -37,6 +34,7 @@ public class EditorActivity extends AppCompatActivity {
 
     private Fragment viewFragment;
     private Fragment editorFragment;
+    public final EditorWatcher editorWatcher = new EditorWatcher();
 
     private boolean filenameChangeEditorAction (TextView v, int actionId, KeyEvent event) {
         if (actionId == EditorInfo.IME_ACTION_GO){// && event.getAction() == KeyEvent.ACTION_DOWN) {
@@ -81,24 +79,6 @@ public class EditorActivity extends AppCompatActivity {
     }
     private final EditText.OnEditorActionListener filenameEditTextListener = this::filenameChangeEditorAction;
 
-    public final TextWatcher editorWatcher = new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-        }
-
-        @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-            note.changeNoteContent(s.toString());
-            //Toast.makeText(mainContext, note.content, Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void afterTextChanged(Editable s) {
-
-        }
-    };
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editor);
@@ -106,6 +86,7 @@ public class EditorActivity extends AppCompatActivity {
         filenameEditText = (EditText) findViewById(R.id.filename_editText);
 
         setSupportActionBar(actionbar);
+        //noinspection ConstantConditions
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Handle Intents
@@ -143,25 +124,12 @@ public class EditorActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.menu_editor, menu);
-        //return true;
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-
         //noinspection SimplifiableIfStatement
-        switch (item.getItemId()){
-            case R.id.action_settings:
-                return true;
-            case android.R.id.home:
-                supportFinishAfterTransition();
+        if (item.getItemId() == R.id.action_settings) {
+            return true;
+        } else if (item.getItemId() == android.R.id.home){
+            supportFinishAfterTransition();
         }
 
         return super.onOptionsItemSelected(item);
@@ -169,8 +137,12 @@ public class EditorActivity extends AppCompatActivity {
 
     @Override
     protected void onStop() {
-        if (note.saveNote()) Toast.makeText(this, "Note saved", Toast.LENGTH_SHORT).show();
-        else Toast.makeText(this, "Could not safe note", Toast.LENGTH_SHORT).show();
+        if (note.saveNote()){
+            Toast.makeText(this, "Note saved", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(this, "Could not safe note", Toast.LENGTH_SHORT).show();
+        }
         super.onStop();
     }
 
@@ -210,13 +182,10 @@ public class EditorActivity extends AppCompatActivity {
     private class onPageChangeListener extends ViewPager.SimpleOnPageChangeListener {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            switch (position){
-                case 0:
-                    viewFragment.onResume();
-                    break;
-                case 1:
-                    editorFragment.onResume();
-                    break;
+            if (position == 0) {
+                viewFragment.onResume();
+            } else if (position == 1){
+                editorFragment.onResume();
             }
 
         }
@@ -224,5 +193,13 @@ public class EditorActivity extends AppCompatActivity {
 
     public Note getNote() {
         return note;
+    }
+
+    private class EditorWatcher extends SimpleTextWatcher{
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            note.changeNoteContent(s.toString());
+            //Toast.makeText(mainContext, note.content, Toast.LENGTH_SHORT).show();
+        }
     }
 }

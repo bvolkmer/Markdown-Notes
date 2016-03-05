@@ -12,11 +12,6 @@ public class EditorFragment extends Fragment {
 
     private EditorActivity editorActivity;
 
-    public EditorFragment(){
-        super();
-    }
-
-
     @Override
     public void onAttach(Context context) {
         this.editorActivity = (EditorActivity) context;
@@ -31,6 +26,7 @@ public class EditorFragment extends Fragment {
 
     @Override
     public void onStart() {
+        //noinspection ConstantConditions
         EditText editorEditText = (EditText) getView().findViewById(R.id.editor_textEdit);
 
         editorEditText.setText(editorActivity.getNote().content);

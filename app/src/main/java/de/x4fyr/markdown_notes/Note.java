@@ -1,5 +1,7 @@
 package de.x4fyr.markdown_notes;
 
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,7 +14,7 @@ public class Note {
     File file;
     String content;
     String formattedContent;
-    boolean folderDummy = false;
+    boolean folderDummy;
 
     public Note(File file) {
         filename = file.getName();
@@ -54,7 +56,7 @@ public class Note {
         } catch (FileNotFoundException e) {
             formattedContent = "";
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.e(this.getClass().toString(), "While reading note: ", e);
         }
     }
 
@@ -63,10 +65,6 @@ public class Note {
         formattedContent = HTML_PRE + MARKED_PRE;
         formattedContent += newContent.replace(System.lineSeparator(), "\\n");
         formattedContent += MARKED_POST + HTML_POST;
-        // TODO: Remove old code
-        //formattedContent += MARKED_POST + SCROLLING_PRE;
-        //formattedContent += scrollingX + "," + scrollingY;
-        //formattedContent += SCROLLING_POST + HTML_POST;
     }
 
     public boolean saveNote() {
@@ -74,7 +72,10 @@ public class Note {
             fw.write(this.content);
             fw.close();
             return true;
-        } catch (IOException e) { return false; }
+        } catch (IOException e) {
+            Log.e(this.getClass().toString(), "While saving note: ", e);
+            return false;
+        }
     }
 
     //TODO: Add copyright

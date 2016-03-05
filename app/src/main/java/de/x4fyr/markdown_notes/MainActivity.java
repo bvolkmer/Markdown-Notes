@@ -27,13 +27,12 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    SharedPreferences sharedPref;
-
     public File folder = Environment.getExternalStorageDirectory();
 
     private final Context mainContext = this;
 
     private EditText locationEditText;
+    private final EditText.OnEditorActionListener locationEditTextListener = this::changeFolderEditorAction;
 
     public void changeFolder(File newFolder){
         try {
@@ -58,16 +57,14 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    private final EditText.OnEditorActionListener locationEditTextListener = this::changeFolderEditorAction;
-
     private ArrayList<Note> getNotesFromFolder(File folder) {
         ArrayList<Note> notes = new ArrayList<>();
 
         class MarkdownFileFilter implements FileFilter {
             public boolean accept(File file) {
                 try {
-                    return (file.isFile()
-                            && file.getName().substring(file.getName().lastIndexOf(".")).equals(".md"));
+                    return file.isFile()
+                            && file.getName().substring(file.getName().lastIndexOf(".")).equals(".md");
                 } catch (Exception e) {
                     return false;
                 }
@@ -106,18 +103,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         String strFolder = sharedPref.getString(getString(R.string.pref_startup_folder_key), "");
 
-        if (!strFolder.equals("")) {
+        if (!"".equals(strFolder)) {
             folder = new File(strFolder);
             if (!folder.exists() || !folder.isDirectory() || !folder.canRead()) {
                 folder = Environment.getExternalStorageDirectory();
             }
         }
-
-        Boolean existing = folder.canRead();
-        File[] files = folder.listFiles();
 
         //Make toolbar as actionbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -132,16 +126,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         if (id == R.id.action_settings) {
