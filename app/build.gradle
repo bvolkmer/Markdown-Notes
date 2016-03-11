@@ -25,6 +25,10 @@ android {
     lintOptions {
         abortOnError false
     }
+    adbOptions {
+        timeOutInMs 60000 // 5 seconds in ms.
+        installOptions "-d","-t"
+    }
 }
 
 dependencies {
