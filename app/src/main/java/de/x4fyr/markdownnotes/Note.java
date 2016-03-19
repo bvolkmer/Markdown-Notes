@@ -1,4 +1,4 @@
-package de.x4fyr.markdown_notes;
+package de.x4fyr.markdownnotes;
 
 import android.util.Log;
 
@@ -53,15 +53,15 @@ public class Note {
             sb.append(MARKED_POST).append(HTML_POST);
 
             formattedContent = sb.toString();
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException exception) {
             formattedContent = "";
-        } catch (IOException e) {
+        } catch (IOException exception) {
             //noinspection HardCodedStringLiteral
-            Log.e(this.getClass().toString(), "While reading note: ", e);
+            Log.e(this.getClass().toString(), "While reading note: ", exception);
         }
     }
 
-    public void changeNoteContent(String newContent){
+    public void changeNoteContent(String newContent) {
         content = newContent;
         formattedContent = HTML_PRE + MARKED_PRE;
         formattedContent += newContent.replace(System.lineSeparator(), "\\n");
@@ -73,9 +73,9 @@ public class Note {
             fw.write(this.content);
             fw.close();
             return true;
-        } catch (IOException e) {
+        } catch (IOException exception) {
             //noinspection HardCodedStringLiteral
-            Log.e(this.getClass().toString(), "While saving note: ", e);
+            Log.e(this.getClass().toString(), "While saving note: ", exception);
             return false;
         }
     }

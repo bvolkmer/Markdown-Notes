@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="de.x4fyr.markdown_notes" >
+    package="de.x4fyr.markdownnotes" >
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true" >
         <activity
-                android:name=".PermissionActivity"
+                android:name="de.x4fyr.markdownnotes.PermissionActivity"
                 android:label="@string/title_activity_permission"
                 android:theme="@style/AppThemeWithActionBar"
         >
@@ -23,27 +23,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="de.x4fyr.markdownnotes.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme" >
         </activity>
         <activity
-            android:name=".EditorActivity"
+            android:name="de.x4fyr.markdownnotes.EditorActivity"
             android:label="@string/title_activity_editor"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="de.x4fyr.markdownnotes.MainActivity"
             android:theme="@style/AppTheme" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="de.x4fyr.markdown_notes.MainActivity" />
+                android:value="de.x4fyr.markdownnotes.MainActivity" />
         </activity>
         <activity
-            android:name=".SettingsActivity"
+            android:name="de.x4fyr.markdownnotes.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="de.x4fyr.markdownnotes.MainActivity"
             android:theme="@style/AppThemeWithActionBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="de.x4fyr.markdown_notes.MainActivity" />
+                android:value="de.x4fyr.markdownnotes.MainActivity" />
         </activity>
     </application>
 

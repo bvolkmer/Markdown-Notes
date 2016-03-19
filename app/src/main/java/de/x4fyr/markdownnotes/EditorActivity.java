@@ -1,14 +1,14 @@
-package de.x4fyr.markdown_notes;
+package de.x4fyr.markdownnotes;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.MenuItem;
@@ -30,20 +30,21 @@ public class EditorActivity extends AppCompatActivity {
     private Toolbar actionbar;
     private EditText filenameEditText;
 
-    private ViewPager mPager;
+    private ViewPager pager;
 
     private Fragment viewFragment;
     private Fragment editorFragment;
     public final EditorWatcher editorWatcher = new EditorWatcher();
 
-    private boolean filenameChangeEditorAction (TextView v, int actionId, KeyEvent event) {
-        if (actionId == EditorInfo.IME_ACTION_GO){// && event.getAction() == KeyEvent.ACTION_DOWN) {
+    private boolean filenameChangeEditorAction(TextView view, int actionId, KeyEvent event) {
+        if (actionId == EditorInfo.IME_ACTION_GO) { // && event.getAction() == KeyEvent.ACTION_DOWN) {
             File newFile = new File(folder.getAbsolutePath() + "/" + filenameEditText.getText().toString().trim());
             if (note.file.compareTo(newFile) != 0 && newFile.exists() ) {
                 Toast.makeText(mainContext, R.string.toast_file_folder_exists, Toast.LENGTH_SHORT).show();
                 filenameEditText.setText(note.file.getName());
             } else if (! newFile.getParentFile().exists()) {
-                Toast.makeText(mainContext, String.format(getString(R.string.toast_folder_does_not_exists), newFile.getAbsolutePath()), Toast.LENGTH_SHORT).show();
+                Toast.makeText(mainContext, String.format(getString(R.string.toast_folder_does_not_exists),
+                               newFile.getAbsolutePath()), Toast.LENGTH_SHORT).show();
                 filenameEditText.setText(note.file.getName());
             } else { // File is valid
                 if ( note.file.exists()) {
@@ -59,14 +60,16 @@ public class EditorActivity extends AppCompatActivity {
                     try {
                         if (newFile.createNewFile()) {
                             note.file = newFile;
-                            Toast.makeText(mainContext, R.string.toast_file_create_successful, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mainContext, R.string.toast_file_create_successful,
+                                           Toast.LENGTH_SHORT).show();
                             actionbar.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
                             actionbar.requestLayout();
                         } else {
-                            Toast.makeText(mainContext, R.string.toast_file_create_unsuccessful, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mainContext, R.string.toast_file_create_unsuccessful,
+                                           Toast.LENGTH_SHORT).show();
                             filenameEditText.setText(note.file.getName());
                         }
-                    } catch (IOException e) {
+                    } catch (IOException exception) {
                         Toast.makeText(mainContext, R.string.toast_file_create_unsuccessful, Toast.LENGTH_SHORT).show();
                         filenameEditText.setText(note.file.getName());
                     }
@@ -77,6 +80,7 @@ public class EditorActivity extends AppCompatActivity {
         return true;
 
     }
+
     private final EditText.OnEditorActionListener filenameEditTextListener = this::filenameChangeEditorAction;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,9 +114,9 @@ public class EditorActivity extends AppCompatActivity {
         viewFragment = new ViewFragment();
         editorFragment = new EditorFragment();
 
-        mPager = (ViewPager) findViewById(R.id.pager);
-        PagerAdapter mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
-        mPager.setAdapter(mPagerAdapter);
+        pager = (ViewPager) findViewById(R.id.pager);
+        PagerAdapter pagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
+        pager.setAdapter(pagerAdapter);
 
         filenameEditText.setText(note.filename);
         filenameEditText.setOnEditorActionListener(filenameEditTextListener);
@@ -122,7 +126,7 @@ public class EditorActivity extends AppCompatActivity {
         editorArgumentBundle.putString("note_content", note.content);
         editorFragment.setArguments(editorArgumentBundle);
 
-        mPager.addOnPageChangeListener(new onPageChangeListener());
+        pager.addOnPageChangeListener(new EditorOnPageChangeListener());
     }
 
     @Override
@@ -130,7 +134,7 @@ public class EditorActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (item.getItemId() == R.id.action_settings) {
             return true;
-        } else if (item.getItemId() == android.R.id.home){
+        } else if (item.getItemId() == android.R.id.home) {
             supportFinishAfterTransition();
         }
 
@@ -139,10 +143,9 @@ public class EditorActivity extends AppCompatActivity {
 
     @Override
     protected void onStop() {
-        if (note.saveNote()){
+        if (note.saveNote()) {
             Toast.makeText(this, R.string.toast_note_saved, Toast.LENGTH_SHORT).show();
-        }
-        else {
+        } else {
             Toast.makeText(this, R.string.toast_note_not_saved, Toast.LENGTH_SHORT).show();
         }
         super.onStop();
@@ -150,22 +153,22 @@ public class EditorActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (mPager.getCurrentItem() == 0) {
+        if (pager.getCurrentItem() == 0) {
             supportFinishAfterTransition();
         } else {
-            mPager.setCurrentItem(mPager.getCurrentItem()-1);
+            pager.setCurrentItem(pager.getCurrentItem() - 1);
         }
     }
 
-    private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter{
+    private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
 
-        public ScreenSlidePagerAdapter(FragmentManager fm){
+        public ScreenSlidePagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
         @Override
         public Fragment getItem(int position) {
-            switch (position){
+            switch (position) {
                 case 0:
                     return viewFragment;
                 case 1:
@@ -181,12 +184,12 @@ public class EditorActivity extends AppCompatActivity {
         }
     }
 
-    private class onPageChangeListener extends ViewPager.SimpleOnPageChangeListener {
+    private class EditorOnPageChangeListener extends ViewPager.SimpleOnPageChangeListener {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
             if (position == 0) {
                 viewFragment.onResume();
-            } else if (position == 1){
+            } else if (position == 1) {
                 editorFragment.onResume();
             }
 
@@ -197,10 +200,10 @@ public class EditorActivity extends AppCompatActivity {
         return note;
     }
 
-    private class EditorWatcher extends SimpleTextWatcher{
+    private class EditorWatcher extends SimpleTextWatcher {
         @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-            note.changeNoteContent(s.toString());
+        public void onTextChanged(CharSequence string, int start, int before, int count) {
+            note.changeNoteContent(string.toString());
             //Toast.makeText(mainContext, note.content, Toast.LENGTH_SHORT).show();
         }
     }
