@@ -34,7 +34,9 @@ public class EditorActivity extends AppCompatActivity {
 
     private Fragment viewFragment;
     private Fragment editorFragment;
-    public final EditorWatcher editorWatcher = new EditorWatcher();
+    private final EditorWatcher editorWatcher = new EditorWatcher();
+
+    private final EditText.OnEditorActionListener filenameEditTextListener = this::filenameChangeEditorAction;
 
     private boolean filenameChangeEditorAction(TextView view, int actionId, KeyEvent event) {
         if (actionId == EditorInfo.IME_ACTION_GO) { // && event.getAction() == KeyEvent.ACTION_DOWN) {
@@ -80,8 +82,6 @@ public class EditorActivity extends AppCompatActivity {
         return true;
 
     }
-
-    private final EditText.OnEditorActionListener filenameEditTextListener = this::filenameChangeEditorAction;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -16,11 +16,6 @@
                 android:label="@string/title_activity_permission"
                 android:theme="@style/AppThemeWithActionBar"
         >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="de.x4fyr.markdownnotes.MainActivity"

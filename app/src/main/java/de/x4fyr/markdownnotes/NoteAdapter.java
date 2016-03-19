@@ -25,8 +25,8 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
     private final float scale;
     private final MainActivity superActivity;
 
-    static final int WEB_VIEW_HEIGHT = 70;
-    static final int PREVIEW_SCALE = 50;
+    private static final int WEB_VIEW_HEIGHT = 70;
+    private static final int PREVIEW_SCALE = 50;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         Note note;
