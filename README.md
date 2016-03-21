@@ -14,3 +14,9 @@ Also there is no icon at the moment.
 
 A big problem other markdown apps also have, is that there isn't a real good compatible java markdown library.
 If someone knows one, or is developing at one, I would provide this app as an (early) implementation.
+
+# Contribute
+
+## Translate
+
+Translation is made through [Weblate](https://hosted.weblate.org/projects/markdown-notes/). If you are missing your language, create an issue and I will add it to Weblate asap, so that you and others are able to translate it.
