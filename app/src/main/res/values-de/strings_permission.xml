@@ -1,2 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="permission_title">Diese App braucht zum Laufen Berechtigungen!</string>
+    <string name="permission_body">Da diese App als Funktion an den Speicher gebunden ist, musst du der App erlauben diesen zu nutzen. Wenn du dies nicht tust, wirst du nicht in der Lage sein diese App zu nutzen, da sie dann weder Notizen auflisten, öffenen/anzeigen, bearbeiten noch löschen kann, was grundsätzlich alle Funktionen dieser App sind. Wenn du den folgenden Schalter drückst, wirst du von dem System nach den Berechtigungen gefragt.</string>
+    <string name="permission_button">Berechtigungen geben</string>
+</resources>
