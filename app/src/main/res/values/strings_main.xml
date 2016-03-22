@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources
-        xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"
->
-    <string name="main_location">Location<xliff:g>:</xliff:g></string>
+<resources >
+    <string name="main_location">Location:</string>
     <string name="main_edit">Edit</string>
     <string name="main_delete">Delete</string>
 </resources>

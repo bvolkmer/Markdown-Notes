@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources
-        xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"
->
+<resources >
     <string name="editor_edit">Edit</string>
-    <string name="editor_filename_input">Filename<xliff:g>:</xliff:g></string>
+    <string name="editor_filename_input">Filename:</string>
     <string name="editor_filename_hint">Enter filename</string>
 </resources>

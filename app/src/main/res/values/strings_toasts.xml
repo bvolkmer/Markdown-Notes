@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources
-        xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"
->
+<resources >
     <string name="toast_file_folder_exists">File or folder with that name already exists.</string>
-    <string name="toast_folder_does_not_exists">Folder <xliff:g example="/path/to/folder">%1$s</xliff:g> does already exists.</string>
+    <string name="toast_folder_does_not_exists">Folder %1$s does already exists.</string>
     <string name="toast_same_filename_entered">Same filename entered.</string>
     <string name="toast_file_move_successful">File successfully moved.</string>
     <string name="toast_file_move_unsuccessful">File could not be moved.</string>
@@ -12,8 +10,8 @@
     <string name="toast_note_saved">Note saved.</string>
     <string name="toast_note_not_saved">Could not save note.</string>
     <string name="toast_not_possible">Not possible.</string>
-    <string name="toast_no_notes_found">No notes found. \n Searching for files with <xliff:g>\".md\"</xliff:g> ending.</string>
+    <string name="toast_no_notes_found">No notes found. \n Searching for files with \".md\" ending.</string>
     <string name="toast_deletion_successful">Deletion successful.</string>
     <string name="toast_deletion_unsuccessful">Deletion unsuccessful.</string>
-    <string name="toast_one_folder_up"><xliff:g>..</xliff:g> (Go up)</string>
+    <string name="toast_one_folder_up">.. (Go up)</string>
 </resources>
