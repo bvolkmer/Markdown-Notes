@@ -51,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean changeFolderEditorAction(TextView view, int actionId, KeyEvent event) {
-        if (actionId == EditorInfo.IME_ACTION_GO) { // && event.getAction() == KeyEvent.ACTION_DOWN) {
+        if (actionId == EditorInfo.IME_ACTION_GO
+            && event.getAction() == KeyEvent.ACTION_DOWN && !event.isCanceled()) {
             File newFolder = new File(locationEditText.getText().toString().trim());
             changeFolder(newFolder);
         }
