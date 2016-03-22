@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources><string name="toast_file_folder_exists">Datei oder Ordner mit diesem Namen existiert bereits.</string>
-    <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="toast_folder_does_not_exists">Ordner <xliff:g example="/path/to/folder">%1$s</xliff:g> existiert bereits.</string>
+    <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="toast_folder_does_not_exists">Ordner %1$s existiert bereits.<xliff:g example="/path/to/folder">%1$s</xliff:g> existiert bereits.</string>
     <string name="toast_same_filename_entered">Der selbe Dateiname wurde eingegeben.</string>
     <string name="toast_file_move_successful">Die Datei wurde erfolgreich verschoben.</string>
     <string name="toast_file_move_unsuccessful">Datei konnte nicht verschoben werden.</string>
@@ -10,8 +10,8 @@
     <string name="toast_note_not_saved">Konnte Notiz nicht speichern.</string>
     <string name="toast_not_possible">Nicht möglich.</string>
     <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="toast_no_notes_found">Keine Notizen gefunden
-\n Suche nach Dateien mit <xliff:g>\".md\"</xliff:g> Ende.</string>
+\n Suche nach Dateien mit \".md\" Ende.<xliff:g>\".md\"</xliff:g> Ende.</string>
     <string name="toast_deletion_successful">Löschen erfolgreich.</string>
     <string name="toast_deletion_unsuccessful">Löschen nicht erfolgreich.</string>
-    <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="toast_one_folder_up"><xliff:g>..</xliff:g> (Gehe hoch)</string>
+    <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="toast_one_folder_up">.. (Gehe hoch)<xliff:g>..</xliff:g> (Gehe hoch)</string>
 </resources>
