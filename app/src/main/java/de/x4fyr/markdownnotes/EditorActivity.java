@@ -34,7 +34,8 @@ public class EditorActivity extends AppCompatActivity {
 
     private Fragment viewFragment;
     private Fragment editorFragment;
-    private final EditorWatcher editorWatcher = new EditorWatcher();
+
+    final EditorWatcher editorWatcher = new EditorWatcher();
 
     private final EditText.OnEditorActionListener filenameEditTextListener = this::filenameChangeEditorAction;
 
