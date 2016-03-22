@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources><string name="editor_edit">Bearbeiten</string>
-    <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="editor_filename_input">Dateiname:<xliff:g>:</xliff:g></string>
+    <string name="editor_filename_input">Dateiname:</string>
     <string name="editor_filename_hint">Trage Dateinamen ein</string>
 </resources>
