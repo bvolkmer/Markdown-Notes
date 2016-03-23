@@ -26,7 +26,7 @@
             android:textSize="12sp"
             android:textColor="?android:colorAccent" />
 
-        <de.x4fyr.markdown_notes.TouchHijackingLinearLayout
+        <de.x4fyr.markdownnotes.TouchHijackingLinearLayout
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:id="@+id/webView_Layout">
@@ -49,7 +49,7 @@
                 android:layout_weight="5"
             />
 
-        </de.x4fyr.markdown_notes.TouchHijackingLinearLayout>
+        </de.x4fyr.markdownnotes.TouchHijackingLinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

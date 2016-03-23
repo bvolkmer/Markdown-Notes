@@ -1,4 +1,4 @@
-package de.x4fyr.markdown_notes;
+package de.x4fyr.markdownnotes;
 
 import android.app.ActivityOptions;
 import android.content.Context;
@@ -34,23 +34,25 @@ public class MainActivity extends AppCompatActivity {
     private EditText locationEditText;
     private final EditText.OnEditorActionListener locationEditTextListener = this::changeFolderEditorAction;
 
-    public void changeFolder(File newFolder){
+    public void changeFolder(File newFolder) {
         try {
             if (newFolder.exists() && newFolder.isDirectory()) {
                 folder = newFolder;
                 createCards(getNotesFromFolder(folder));
                 locationEditText.setText(folder.getAbsolutePath());
             } else {
-                Toast.makeText(mainContext, String.format(getString(R.string.toast_folder_does_not_exists), folder.getAbsoluteFile()), Toast.LENGTH_SHORT).show();
+                Toast.makeText(mainContext, String.format(getString(R.string.toast_folder_does_not_exists),
+                               folder.getAbsoluteFile()), Toast.LENGTH_SHORT).show();
                 locationEditText.setText(folder.getAbsoluteFile().toString());
             }
-        } catch (Exception e) {
+        } catch (Exception exception) {
             Toast.makeText(mainContext, R.string.toast_not_possible, Toast.LENGTH_SHORT).show();
         }
     }
 
-    private boolean changeFolderEditorAction (TextView v, int actionId, KeyEvent event){
-        if (actionId == EditorInfo.IME_ACTION_GO){// && event.getAction() == KeyEvent.ACTION_DOWN) {
+    private boolean changeFolderEditorAction(TextView view, int actionId, KeyEvent event) {
+        if (actionId == EditorInfo.IME_ACTION_GO
+            && event.getAction() == KeyEvent.ACTION_DOWN && !event.isCanceled()) {
             File newFolder = new File(locationEditText.getText().toString().trim());
             changeFolder(newFolder);
         }
@@ -65,14 +67,13 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     //noinspection HardCodedStringLiteral
                     return file.isFile() && file.getName().substring(file.getName().lastIndexOf(".")).equals(".md");
-                } catch (Exception e) {
+                } catch (Exception exception) {
                     return false;
                 }
             }
         }
+
         File[] files = folder.listFiles(new MarkdownFileFilter());
-
-
         if (files.length != 0) {
             for (File file : files) {
                 notes.add(new Note(file));
@@ -84,18 +85,18 @@ public class MainActivity extends AppCompatActivity {
         return notes;
     }
 
-    private void createCards(ArrayList<Note> notes){
+    private void createCards(ArrayList<Note> notes) {
 
 
-        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.note_card_recycler_view);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.note_card_recycler_view);
 
-        mRecyclerView.setHasFixedSize(true);
+        recyclerView.setHasFixedSize(true);
 
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
 
-        RecyclerView.Adapter mAdapter = new NoteAdapter(notes, this);
-        mRecyclerView.setAdapter(mAdapter);
+        RecyclerView.Adapter adapter = new NoteAdapter(notes, this);
+        recyclerView.setAdapter(adapter);
 
     }
 
@@ -159,22 +160,22 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void addItem(View view){
+    public void addItem(View view) {
         Intent intent = new Intent(this, EditorActivity.class);
         //noinspection HardCodedStringLiteral
         intent.putExtra("de.x4fyr.markdown_notes.CURRENT_NOTE", folder);
         startActivity(intent);
     }
 
-    public void viewItem(View v){
+    public void viewItem(View view) {
         Intent intent = new Intent(this, EditorActivity.class);
-        String filename = ((TextView) v.findViewById(R.id.note_card_filename)).getText().toString().trim();
+        String filename = ((TextView) view.findViewById(R.id.note_card_filename)).getText().toString().trim();
         File file = new File(folder.getName() + "/" + filename);
         //noinspection HardCodedStringLiteral
         intent.putExtra("de.x4fyr.markdown_notes.CURRENT_NOTE", file);
-        WebView wv_title = ((WebView) v.findViewById(R.id.note_card_content));
+        WebView wvTitle = ((WebView) view.findViewById(R.id.note_card_content));
         //noinspection HardCodedStringLiteral
-        ActivityOptions options  = ActivityOptions.makeSceneTransitionAnimation(this, wv_title, "rendered_view");
+        ActivityOptions options  = ActivityOptions.makeSceneTransitionAnimation(this, wvTitle, "rendered_view");
         startActivity(intent, options.toBundle());
     }
 

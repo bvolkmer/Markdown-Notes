@@ -1,10 +1,5 @@
 /.idea
 /app/build
-/app/app.iml
-/app/app-release.apk
 .gradle
 /local.properties
-/.idea/workspace.xml
-/.idea/libraries
 /build
-/Markdown-Notes.iml

@@ -1,4 +1,4 @@
-package de.x4fyr.markdown_notes;
+package de.x4fyr.markdownnotes;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -9,22 +9,36 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
-import android.view.MenuItem;
 import android.support.v4.app.NavUtils;
+import android.view.MenuItem;
 
-
-/**
- * A {@link PreferenceActivity} that presents a set of application settings. On
- * handset devices, settings are presented as a single list. On tablets,
- * settings are split by category, with category headers shown to the left of
- * the list of settings.
- * <p>
- * See <a href="http://developer.android.com/design/patterns/settings.html">
- * Android Design: Settings</a> for design guidelines and the <a
- * href="http://developer.android.com/guide/topics/ui/settings.html">Settings
- * API Guide</a> for more information on developing a Settings UI.
- */
 public class SettingsActivity extends PreferenceActivity {
+
+    /**
+     * A preference value change listener that updates the preference's summary
+     * to reflect its new value.
+     */
+    private static final Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener
+        = (Preference preference, Object value) -> {
+            String stringValue = value.toString();
+
+            if (preference instanceof ListPreference) {
+                // For list preferences, look up the correct display value in
+                // the preference's 'entries' list.
+                ListPreference listPreference = (ListPreference) preference;
+                int index = listPreference.findIndexOfValue(stringValue);
+
+                // Set the summary to reflect the new value.
+                preference.setSummary(
+                        index >= 0
+                                ? listPreference.getEntries()[index]
+                                : null);
+
+            } else {
+                preference.setSummary(stringValue);
+            }
+            return true;
+        };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,33 +77,6 @@ public class SettingsActivity extends PreferenceActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-    /**
-     * A preference value change listener that updates the preference's summary
-     * to reflect its new value.
-     */
-    private static final Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = (Preference preference, Object value) -> {
-            String stringValue = value.toString();
-
-            if (preference instanceof ListPreference) {
-                // For list preferences, look up the correct display value in
-                // the preference's 'entries' list.
-                ListPreference listPreference = (ListPreference) preference;
-                int index = listPreference.findIndexOfValue(stringValue);
-
-                // Set the summary to reflect the new value.
-                preference.setSummary(
-                        index >= 0
-                                ? listPreference.getEntries()[index]
-                                : null);
-
-            } else {
-                // For all other preferences, set the summary to the value's
-                // simple string representation.
-                preference.setSummary(stringValue);
-            }
-            return true;
-        };
 
     /**
      * Binds a preference's summary to its value. More specifically, when the

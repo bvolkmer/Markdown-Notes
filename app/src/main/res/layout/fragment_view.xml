@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="de.x4fyr.markdown_notes.ViewFragment">
+    tools:context="de.x4fyr.markdownnotes.ViewFragment">
 
     <WebView
         android:layout_width="match_parent"

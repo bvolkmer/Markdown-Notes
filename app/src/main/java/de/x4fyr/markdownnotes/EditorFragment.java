@@ -1,4 +1,4 @@
-package de.x4fyr.markdown_notes;
+package de.x4fyr.markdownnotes;
 
 import android.content.Context;
 import android.os.Bundle;

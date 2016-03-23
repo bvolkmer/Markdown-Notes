@@ -1,8 +1,8 @@
-package de.x4fyr.markdown_notes;
+package de.x4fyr.markdownnotes;
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

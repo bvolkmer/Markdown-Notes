@@ -1,4 +1,4 @@
-package de.x4fyr.markdown_notes;
+package de.x4fyr.markdownnotes;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
