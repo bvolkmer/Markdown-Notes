@@ -12,6 +12,9 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 
+/**
+ * Activity to manage app settings.
+ */
 public class SettingsActivity extends PreferenceActivity {
 
     /**

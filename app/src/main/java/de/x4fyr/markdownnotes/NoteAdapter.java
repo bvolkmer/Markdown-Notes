@@ -20,6 +20,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Adapter for populating a RecylcerView with Note instances.
+ */
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
     private final List<Note> notes = new ArrayList<>();
     private final float scale;
@@ -28,6 +31,9 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
     private static final int WEB_VIEW_HEIGHT = 70;
     private static final int PREVIEW_SCALE = 50;
 
+    /**
+     * ViewHolder of this for this Adapter.
+     */
     public class ViewHolder extends RecyclerView.ViewHolder {
         Note note;
 
@@ -73,6 +79,11 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
             }
         }
 
+        /**
+         * Constructor.
+         *
+         * @param view Reference to the view.
+         */
         public ViewHolder(CardView view) {
             super(view);
             cardView = view;
@@ -91,6 +102,12 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
         }
     }
 
+    /**
+     * Constructor.
+     *
+     * @param notes Notes to handle with this Adapter.
+     * @param superActivity Reference to the containing Activity.
+     */
     public NoteAdapter(List<Note> notes, Activity superActivity) {
         this.superActivity = (de.x4fyr.markdownnotes.MainActivity) superActivity;
         for (File file: this.superActivity.folder.listFiles()) {

@@ -9,6 +9,12 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * Class representing a note.
+ *
+ * <p>Actually this doesn't have to be a real note, but can be a folder.
+ * This changes in future.</p>
+ */
 public class Note {
     final String filename;
     File file;
@@ -16,6 +22,11 @@ public class Note {
     String formattedContent;
     boolean folderDummy;
 
+    /**
+     * Constructor for existing notes.
+     *
+     * @param file file or folder of this note.
+     */
     public Note(File file) {
         filename = file.getName();
         this.file = file;
@@ -27,6 +38,9 @@ public class Note {
         }
     }
 
+    /**
+     * Constructor for new notes.
+     */
     public Note() {
         //TODO: Remove me. I'm just for unfinished implementations
         filename = "";
@@ -61,6 +75,11 @@ public class Note {
         }
     }
 
+    /**
+     * Change the content of the note.
+     *
+     * @param newContent new content of the note. The old content is going to replaced by this.
+     */
     public void changeNoteContent(String newContent) {
         content = newContent;
         formattedContent = HTML_PRE + MARKED_PRE;
@@ -68,6 +87,11 @@ public class Note {
         formattedContent += MARKED_POST + HTML_POST;
     }
 
+    /**
+     * Save this note to the persistent memory.
+     *
+     * @return true if successful.
+     */
     public boolean saveNote() {
         try (FileWriter fw = new FileWriter(this.file)) {
             fw.write(this.content);

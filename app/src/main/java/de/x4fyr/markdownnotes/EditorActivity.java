@@ -21,6 +21,9 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Activity handling view and edit of a single note.
+ */
 public class EditorActivity extends AppCompatActivity {
 
     private Note note;
@@ -85,6 +88,7 @@ public class EditorActivity extends AppCompatActivity {
 
     }
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editor);

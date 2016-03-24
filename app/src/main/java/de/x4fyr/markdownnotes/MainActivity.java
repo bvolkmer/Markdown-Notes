@@ -25,6 +25,9 @@ import java.io.File;
 import java.io.FileFilter;
 import java.util.ArrayList;
 
+/**
+ * Main Activity, from where folders are browsed to open notes.
+ */
 public class MainActivity extends AppCompatActivity {
 
     public File folder = Environment.getExternalStorageDirectory();
@@ -34,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
     private EditText locationEditText;
     private final EditText.OnEditorActionListener locationEditTextListener = this::changeFolderEditorAction;
 
+    /**
+     * Change the current folder scope of the main activity.
+     *
+     * @param newFolder File object containing the folder.
+     */
     public void changeFolder(File newFolder) {
         try {
             if (newFolder.exists() && newFolder.isDirectory()) {
@@ -62,7 +70,11 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Note> getNotesFromFolder(File folder) {
         ArrayList<Note> notes = new ArrayList<>();
 
+        /**
+         * Filter for Markdown files.
+         */
         class MarkdownFileFilter implements FileFilter {
+            @Override
             public boolean accept(File file) {
                 try {
                     //noinspection HardCodedStringLiteral
@@ -160,6 +172,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Trigger for view actions to add a new note item.
+     *
+     * @param view Not used but needed for the OnClickListener interface.
+     */
     public void addItem(View view) {
         Intent intent = new Intent(this, EditorActivity.class);
         //noinspection HardCodedStringLiteral
@@ -167,6 +184,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Trigger for view actions to add a new note item.
+     *
+     * <p>Launches the EditorActivity.</p>
+     *
+     * @param view Used to determine the filename of the item.
+     *             This is got from a TextView with the id note_card_filename in this view.
+     */
     public void viewItem(View view) {
         Intent intent = new Intent(this, EditorActivity.class);
         String filename = ((TextView) view.findViewById(R.id.note_card_filename)).getText().toString().trim();

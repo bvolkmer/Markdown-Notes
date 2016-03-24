@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
+/**
+ * Fragment handling the edit of a single note, as a part of the EditorActivity.
+ */
 public class EditorFragment extends Fragment {
 
     private EditorActivity editorActivity;

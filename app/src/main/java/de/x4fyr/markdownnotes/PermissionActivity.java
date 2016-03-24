@@ -11,10 +11,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+/**
+ * Activity to initially grant always needed permissions to this app.
+ */
 public class PermissionActivity extends AppCompatActivity {
 
     private static final int EXTERNAL_STORAGE_REQUEST = 0;
 
+    /**
+     * Manually requests permissions.
+     *
+     * <p>Used from Android Marshmallow on.</p>
+     * @param view view which triggered the action. Not actually used, but needed for OnClickListener.
+     */
     public void askForPermissions(View view) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             requestPermissions(new String[] {Manifest.permission.READ_EXTERNAL_STORAGE,
