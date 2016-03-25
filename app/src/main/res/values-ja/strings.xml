@@ -1,2 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="app_name">Markdown メモ</string>
+
+    <string name="action_settings">設定</string>
+    <string name="title_activity_editor">エディター</string>
+    <string name="title_activity_settings">設定</string>
+    <string name="title_activity_permission">アクセス許可が必要です</string>
+
+</resources>
