@@ -2,18 +2,16 @@ package de.x4fyr.markdownnotes;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import in.uncod.android.bypass.Bypass;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -21,7 +19,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Adapter for populating a RecylcerView with Note instances.
+ * Adapter for populating a RecyclerView with Note instances.
  */
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
     private final List<Note> notes = new ArrayList<>();
@@ -29,7 +27,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
     private final MainActivity superActivity;
 
     private static final int WEB_VIEW_HEIGHT = 70;
-    private static final int PREVIEW_SCALE = 50;
 
     /**
      * ViewHolder of this for this Adapter.
@@ -39,8 +36,8 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
 
         public final CardView cardView;
         final TextView filename;
-        final WebView content;
-        final WebView contentPreview;
+        final TextView content;
+        final TextView contentPreview;
         final LinearLayout webViewLayout;
         final LinearLayout toolsLayout;
         final TextView edit;
@@ -88,8 +85,8 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
             super(view);
             cardView = view;
             filename = (TextView) view.findViewById(R.id.note_card_filename);
-            content = (WebView) view.findViewById(R.id.note_card_content);
-            contentPreview = (WebView) view.findViewById(R.id.note_card_content_preview);
+            content = (TextView) view.findViewById(R.id.note_card_content);
+            contentPreview = (TextView) view.findViewById(R.id.note_card_content_preview);
             webViewLayout = (LinearLayout) view.findViewById(R.id.webView_Layout);
             toolsLayout = (LinearLayout) view.findViewById(R.id.tools_layout); //TODO: Use on click
             edit = (TextView) view.findViewById(R.id.edit_textView);
@@ -149,20 +146,13 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
             // Set style
             holder.webViewLayout.getLayoutParams().height = (int) (WEB_VIEW_HEIGHT * scale);
             holder.webViewLayout.requestLayout();
-            holder.contentPreview.setInitialScale(PREVIEW_SCALE); //TODO: Set scale dynamic on line number
             // Set formattedContent
             holder.filename.setText(notes.get(position).filename);
-            //noinspection HardCodedStringLiteral
-            holder.content.loadData(notes.get(position).formattedContent, "text/html", null);
-            //noinspection HardCodedStringLiteral
-            holder.contentPreview.loadData(notes.get(position).formattedContent, "text/html", null);
-            // Set WebView settings
-            holder.content.setBackgroundColor(Color.TRANSPARENT);
-            holder.contentPreview.setBackgroundColor(Color.TRANSPARENT);
-            WebSettings contentWebSettings = holder.content.getSettings();
-            WebSettings contentPreviewWebSettings = holder.contentPreview.getSettings();
-            contentWebSettings.setJavaScriptEnabled(true);
-            contentPreviewWebSettings.setJavaScriptEnabled(true);
+            Bypass bypass = new Bypass(superActivity);
+            CharSequence spannableContent = bypass.markdownToSpannable(notes.get(position).content);
+            holder.content.setText(spannableContent);
+            holder.contentPreview.setText(spannableContent);
+            holder.contentPreview.setHorizontallyScrolling(true);
         }
     }
 

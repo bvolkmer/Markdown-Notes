@@ -16,7 +16,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.webkit.WebView;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -198,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
         File file = new File(folder.getName() + "/" + filename);
         //noinspection HardCodedStringLiteral
         intent.putExtra("de.x4fyr.markdown_notes.CURRENT_NOTE", file);
-        WebView wvTitle = ((WebView) view.findViewById(R.id.note_card_content));
+        TextView wvTitle = ((TextView) view.findViewById(R.id.note_card_content));
         //noinspection HardCodedStringLiteral
         ActivityOptions options  = ActivityOptions.makeSceneTransitionAnimation(this, wvTitle, "rendered_view");
         startActivity(intent, options.toBundle());
