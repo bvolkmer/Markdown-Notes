@@ -1,3 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources><string name="pref_startup_folder">Start Ordner</string>
+<string name="pref_startup_folder_hint">Gehe zum Startbildschirm und kopiere den Text.</string>
+    <string name="pref_startup_title">Start Einstellungen</string>
+    <string name="pref_license_title">Lizenzen</string>
+    <string name="pref_licence_app">App Lizenz</string>
+    <string name="pref_licence_app_summary">Diese Applikation ist lizenziert unter der GNU GENERAL PUBLIC LICENCE v3+</string>
+    <string name="pref_licence_bypasses_summary">von commit451 auf GitHub.com</string>
+    <string name="pref_licence_bypass_summary">von Uncodin auf GitHub.com</string>
 </resources>
