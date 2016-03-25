@@ -1,4 +1,4 @@
-package de.x4fyr.markdownnotes;
+package de.x4fyr.markdownnotes.utils;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -6,7 +6,7 @@ import android.text.TextWatcher;
 /**
  * This class is a stub, implementing TextWatcher with empty classes.
  */
-class SimpleTextWatcher implements TextWatcher {
+public class SimpleTextWatcher implements TextWatcher {
 
     @Override
     public void beforeTextChanged(CharSequence string, int start, int count, int after) {

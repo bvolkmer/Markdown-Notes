@@ -1,4 +1,4 @@
-package de.x4fyr.markdownnotes;
+package de.x4fyr.markdownnotes.utils;
 
 import android.util.Log;
 
@@ -16,10 +16,10 @@ import java.io.IOException;
  * This changes in future.</p>
  */
 public class Note {
-    final String filename;
-    File file;
-    String content;
-    boolean folderDummy;
+    private final String filename;
+    private File file;
+    private String content;
+    private boolean folderDummy;
 
     /**
      * Constructor for existing notes.
@@ -92,4 +92,23 @@ public class Note {
         }
     }
 
+    public String getFilename() {
+        return filename;
+    }
+
+    public File getFile() {
+        return file;
+    }
+
+    public void setFile(File file) {
+        this.file = file;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public Boolean isFolder() {
+        return folderDummy;
+    }
 }

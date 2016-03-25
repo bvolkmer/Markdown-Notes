@@ -17,6 +17,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import de.x4fyr.markdownnotes.utils.Note;
+import de.x4fyr.markdownnotes.utils.SimpleTextWatcher;
 
 import java.io.File;
 import java.io.IOException;
@@ -46,27 +48,27 @@ public class EditorActivity extends AppCompatActivity {
         if (actionId == EditorInfo.IME_ACTION_GO
             && event.getAction() == KeyEvent.ACTION_DOWN && !event.isCanceled()) {
             File newFile = new File(folder.getAbsolutePath() + "/" + filenameEditText.getText().toString().trim());
-            if (note.file.compareTo(newFile) != 0 && newFile.exists() ) {
+            if (note.getFile().compareTo(newFile) != 0 && newFile.exists() ) {
                 Toast.makeText(mainContext, R.string.toast_file_folder_exists, Toast.LENGTH_SHORT).show();
-                filenameEditText.setText(note.file.getName());
+                filenameEditText.setText(note.getFile().getName());
             } else if (! newFile.getParentFile().exists()) {
                 Toast.makeText(mainContext, String.format(getString(R.string.toast_folder_does_not_exists),
                                newFile.getAbsolutePath()), Toast.LENGTH_SHORT).show();
-                filenameEditText.setText(note.file.getName());
+                filenameEditText.setText(note.getFile().getName());
             } else { // File is valid
-                if ( note.file.exists()) {
-                    if (note.file.compareTo(newFile) == 0) {
+                if ( note.getFile().exists()) {
+                    if (note.getFile().compareTo(newFile) == 0) {
                         Toast.makeText(mainContext, R.string.toast_same_filename_entered, Toast.LENGTH_SHORT).show();
-                    } else if (note.file.renameTo(newFile)) {
+                    } else if (note.getFile().renameTo(newFile)) {
                         Toast.makeText(mainContext, R.string.toast_file_move_successful, Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(mainContext, R.string.toast_file_move_unsuccessful, Toast.LENGTH_SHORT).show();
-                        filenameEditText.setText(note.file.getName());
+                        filenameEditText.setText(note.getFile().getName());
                     }
                 } else {  // This is a new note, and must be created.
                     try {
                         if (newFile.createNewFile()) {
-                            note.file = newFile;
+                            note.setFile(newFile);
                             Toast.makeText(mainContext, R.string.toast_file_create_successful,
                                            Toast.LENGTH_SHORT).show();
                             actionbar.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
@@ -74,11 +76,11 @@ public class EditorActivity extends AppCompatActivity {
                         } else {
                             Toast.makeText(mainContext, R.string.toast_file_create_unsuccessful,
                                            Toast.LENGTH_SHORT).show();
-                            filenameEditText.setText(note.file.getName());
+                            filenameEditText.setText(note.getFile().getName());
                         }
                     } catch (IOException exception) {
                         Toast.makeText(mainContext, R.string.toast_file_create_unsuccessful, Toast.LENGTH_SHORT).show();
-                        filenameEditText.setText(note.file.getName());
+                        filenameEditText.setText(note.getFile().getName());
                     }
                 }
             }
@@ -124,12 +126,12 @@ public class EditorActivity extends AppCompatActivity {
         PagerAdapter pagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         pager.setAdapter(pagerAdapter);
 
-        filenameEditText.setText(note.filename);
+        filenameEditText.setText(note.getFilename());
         filenameEditText.setOnEditorActionListener(filenameEditTextListener);
 
         Bundle editorArgumentBundle = new Bundle();
         //noinspection HardCodedStringLiteral
-        editorArgumentBundle.putString("note_content", note.content);
+        editorArgumentBundle.putString("note_content", note.getContent());
         editorFragment.setArguments(editorArgumentBundle);
 
         pager.addOnPageChangeListener(new EditorOnPageChangeListener());

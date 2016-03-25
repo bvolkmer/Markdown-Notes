@@ -1,4 +1,4 @@
-package de.x4fyr.markdownnotes;
+package de.x4fyr.markdownnotes.utils;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +11,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import de.x4fyr.markdownnotes.EditorActivity;
+import de.x4fyr.markdownnotes.MainActivity;
+import de.x4fyr.markdownnotes.R;
 import in.uncod.android.bypass.Bypass;
 
 import java.io.File;
@@ -44,7 +47,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
         final TextView delete;
 
         private boolean openToolbar(View view) {
-            if (!note.folderDummy) {
+            if (!note.isFolder()) {
                 if (toolsLayout.getLayoutParams().height == 0) {
                     toolsLayout.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
                 } else {
@@ -56,19 +59,19 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
         }
 
         private void editItem(View view) {
-            if (note.folderDummy) {
-                superActivity.changeFolder(note.file);
+            if (note.isFolder()) {
+                superActivity.changeFolder(note.getFile());
             } else {
                 Intent intent = new Intent(superActivity, EditorActivity.class);
                 //noinspection HardCodedStringLiteral
-                intent.putExtra("de.x4fyr.markdown_notes.CURRENT_NOTE", note.file);
+                intent.putExtra("de.x4fyr.markdown_notes.CURRENT_NOTE", note.getFile());
                 superActivity.startActivity(intent);
             }
         }
 
         private void deleteItem(View view) {
             //TODO: make safety dialog
-            if (note.file.delete()) {
+            if (note.getFile().delete()) {
                 superActivity.onStart();
                 Toast.makeText(superActivity, R.string.toast_deletion_successful, Toast.LENGTH_SHORT).show();
             } else {
@@ -112,8 +115,8 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
                 this.notes.add(new Note(file));
             }
         }
-        Collections.sort(this.notes, (first,second) -> first.file.compareTo(second.file));
-        Collections.sort(notes, (first,second) -> first.file.compareTo(second.file));
+        Collections.sort(this.notes, (first,second) -> first.getFile().compareTo(second.getFile()));
+        Collections.sort(notes, (first,second) -> first.getFile().compareTo(second.getFile()));
         this.notes.addAll(notes);
         this.notes.add(0, new Note(this.superActivity.folder.getParentFile()));
         DisplayMetrics metrics = new DisplayMetrics();
@@ -136,20 +139,20 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
         if (position == 0) {
             holder.filename.setText(R.string.toast_one_folder_up);
         } else {
-            holder.filename.setText(notes.get(position).filename);
+            holder.filename.setText(notes.get(position).getFilename());
         }
         holder.toolsLayout.getLayoutParams().height = 0;
         holder.toolsLayout.requestLayout();
-        if (notes.get(position).folderDummy) {
+        if (notes.get(position).isFolder()) {
             holder.webViewLayout.getLayoutParams().height = 0;
         } else {
             // Set style
             holder.webViewLayout.getLayoutParams().height = (int) (WEB_VIEW_HEIGHT * scale);
             holder.webViewLayout.requestLayout();
             // Set formattedContent
-            holder.filename.setText(notes.get(position).filename);
+            holder.filename.setText(notes.get(position).getFilename());
             Bypass bypass = new Bypass(superActivity);
-            CharSequence spannableContent = bypass.markdownToSpannable(notes.get(position).content);
+            CharSequence spannableContent = bypass.markdownToSpannable(notes.get(position).getContent());
             holder.content.setText(spannableContent);
             holder.contentPreview.setText(spannableContent);
             holder.contentPreview.setHorizontallyScrolling(true);

@@ -19,6 +19,8 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import de.x4fyr.markdownnotes.utils.Note;
+import de.x4fyr.markdownnotes.utils.NoteAdapter;
 
 import java.io.File;
 import java.io.FileFilter;

@@ -32,7 +32,7 @@ public class EditorFragment extends Fragment {
         //noinspection ConstantConditions
         EditText editorEditText = (EditText) getView().findViewById(R.id.editor_textEdit);
 
-        editorEditText.setText(editorActivity.getNote().content);
+        editorEditText.setText(editorActivity.getNote().getContent());
 
         EditorActivity context = (EditorActivity) getContext();
         editorEditText.addTextChangedListener(context.editorWatcher);

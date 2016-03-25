@@ -1,4 +1,4 @@
-package de.x4fyr.markdownnotes;
+package de.x4fyr.markdownnotes.utils;
 
 import android.content.Context;
 import android.util.AttributeSet;

@@ -35,14 +35,14 @@ public class ViewFragment extends Fragment {
     public void onStart() {
         //noinspection ConstantConditions
         preview = (TextView) getView().findViewById(R.id.editor_preview);
-        preview.setText(bypass.markdownToSpannable(editorActivity.getNote().content));
+        preview.setText(bypass.markdownToSpannable(editorActivity.getNote().getContent()));
 
         super.onStart();
     }
 
     @Override
     public void onResume() {
-        preview.setText(bypass.markdownToSpannable(editorActivity.getNote().content));
+        preview.setText(bypass.markdownToSpannable(editorActivity.getNote().getContent()));
         super.onResume();
     }
 }
