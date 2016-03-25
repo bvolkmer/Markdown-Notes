@@ -6,20 +6,22 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
+import android.widget.TextView;
+import in.uncod.android.bypass.Bypass;
 
 /**
  * A placeholder fragment containing a simple view.
  */
 public class ViewFragment extends Fragment {
 
-    private WebView preview;
+    private TextView preview;
     private EditorActivity editorActivity;
+    private Bypass bypass;
 
     @Override
     public void onAttach(Context context) {
         this.editorActivity = (EditorActivity) context;
+        bypass = new Bypass(editorActivity);
         super.onAttach(context);
     }
 
@@ -32,21 +34,15 @@ public class ViewFragment extends Fragment {
     @Override
     public void onStart() {
         //noinspection ConstantConditions
-        preview = (WebView) getView().findViewById(R.id.editor_preview);
-        //noinspection HardCodedStringLiteral
-        preview.loadData(editorActivity.getNote().formattedContent, "text/html", null);
-        WebSettings previewWebSettings = preview.getSettings();
-        previewWebSettings.setJavaScriptEnabled(true);
+        preview = (TextView) getView().findViewById(R.id.editor_preview);
+        preview.setText(bypass.markdownToSpannable(editorActivity.getNote().content));
 
         super.onStart();
     }
 
     @Override
     public void onResume() {
-        //noinspection HardCodedStringLiteral
-        preview.loadData(editorActivity.getNote().formattedContent, "text/html", null);
-        WebSettings previewWebSettings = preview.getSettings();
-        previewWebSettings.setJavaScriptEnabled(true);
+        preview.setText(bypass.markdownToSpannable(editorActivity.getNote().content));
         super.onResume();
     }
 }

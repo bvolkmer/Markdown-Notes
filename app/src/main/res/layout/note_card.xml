@@ -31,7 +31,7 @@
             android:layout_height="70dp"
             android:id="@+id/webView_Layout">
 
-            <WebView
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/note_card_content"
@@ -42,11 +42,12 @@
                 android:transitionName="rendered_view"
             />
 
-            <WebView
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/note_card_content_preview"
                 android:layout_weight="5"
+                android:textSize="2sp"
             />
 
         </de.x4fyr.markdownnotes.TouchHijackingLinearLayout>

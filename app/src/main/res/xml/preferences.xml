@@ -26,11 +26,18 @@
                     android:data="http://www.gnu.org/licenses/gpl.html" />
         </Preference>
         <Preference
-                android:title="Markdown Parser"
-                android:summary="marked by Christopher Jeffrey"
+                android:title="Bypasses"
+                android:summary="by commit451 at GitHub.com"
         >
             <intent android:action="android.intent.action.VIEW"
-                    android:data="https://github.com/chjj/marked/tree/88ce4df47c4d994dc1b1df1477a21fb893e11ddc" />
+                    android:data="https://github.com/Commit451/bypasses/blob/master/LICENSE.txt" />
+        </Preference>
+        <Preference
+                android:title="Bypass"
+                android:summary="by Uncodin at GitHub.com"
+        >
+            <intent android:action="android.intent.action.VIEW"
+                    android:data="https://github.com/Uncodin/bypass/blob/master/LICENSE.txt" />
         </Preference>
 
     </PreferenceCategory>
