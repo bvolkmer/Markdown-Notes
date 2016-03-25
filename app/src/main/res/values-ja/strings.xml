@@ -4,6 +4,6 @@
     <string name="action_settings">設定</string>
     <string name="title_activity_editor">エディター</string>
     <string name="title_activity_settings">設定</string>
-    <string name="title_activity_permission">アクセス許可が必要です</string>
+    <string name="title_activity_permission">必要なアクセス許可</string>
 
 </resources>
