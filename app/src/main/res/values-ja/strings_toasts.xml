@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="toast_file_folder_exists">その名前のファイルまたはフォルダーが既に存在します。</string>
+    <string name="toast_folder_does_not_exists">フォルダー %1$s は既に存在します。</string>
+    <string name="toast_same_filename_entered">同じファイル名を入力しました。</string>
+    <string name="toast_file_move_successful">ファイルを正常に移動しました。</string>
+    <string name="toast_file_move_unsuccessful">ファイルを移動できませんでした。</string>
+    <string name="toast_file_create_successful">ファイルを正常に作成しました。</string>
+    <string name="toast_file_create_unsuccessful">ファイルを作成できませんでした。</string>
+    <string name="toast_note_saved">メモを保存しました。</string>
+    <string name="toast_note_not_saved">メモを保存できませんでした。</string>
+    <string name="toast_not_possible">できません。</string>
+    <string name="toast_no_notes_found">ノートはありません。\n\".md\" で終わるファイルを検索します。</string>
+    <string name="toast_deletion_successful">正常に削除しました。</string>
+    <string name="toast_deletion_unsuccessful">削除に失敗しました。</string>
+    <string name="toast_one_folder_up">.. (上に移動)</string>
+</resources>

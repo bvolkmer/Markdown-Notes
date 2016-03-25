@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="editor_edit">編集</string>
+    <string name="editor_filename_input">ファイル名:</string>
+    <string name="editor_filename_hint">ファイル名を入力してください</string>
+</resources>
