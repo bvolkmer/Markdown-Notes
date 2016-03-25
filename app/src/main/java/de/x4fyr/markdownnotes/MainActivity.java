@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-        String strFolder = sharedPref.getString(getString(R.string.pref_startup_folder_key), "");
+        String strFolder = sharedPref.getString("pref_key_startup_folder", "");
 
 
         if (!"".equals(strFolder)) {

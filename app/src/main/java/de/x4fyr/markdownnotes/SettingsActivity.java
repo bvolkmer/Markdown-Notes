@@ -113,7 +113,7 @@ public class SettingsActivity extends PreferenceActivity {
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.preferences);
-            bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_startup_folder_key)));
+            bindPreferenceSummaryToValue(findPreference("pref_key_startup_folder"));
         }
     }
 

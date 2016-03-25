@@ -1,40 +1,40 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
-            android:title="Startup Settings"
+            android:title="@string/pref_startup_title"
             android:key="pref_key_startup_settings"
     >
         <EditTextPreference
                 android:key="pref_key_startup_folder"
-                android:title="Startup Folder"
+                android:title="@string/pref_startup_folder"
                 android:defaultValue=""
                 android:selectAllOnFocus="true"
                 android:singleLine="true"
                 android:maxLines="1"
-                android:hint="Navigate in main menu and copy the string."
+                android:hint="@string/pref_startup_folder_hint"
         />
     </PreferenceCategory>
     <PreferenceCategory
-            android:title="Licenses"
+            android:title="@string/pref_license_title"
             android:key="pref_key_licenses_settings"
     >
         <Preference
-                android:title="App Licence"
-                android:summary="This application is licensed under the GNU GENERAL PUBLIC LICENCE v3+"
+                android:title="@string/pref_licence_app"
+                android:summary="@string/pref_licence_app_summary"
         >
             <intent android:action="android.intent.action.VIEW"
                     android:data="http://www.gnu.org/licenses/gpl.html" />
         </Preference>
         <Preference
                 android:title="Bypasses"
-                android:summary="by commit451 at GitHub.com"
+                android:summary="@string/pref_licence_bypasses_summary"
         >
             <intent android:action="android.intent.action.VIEW"
                     android:data="https://github.com/Commit451/bypasses/blob/master/LICENSE.txt" />
         </Preference>
         <Preference
                 android:title="Bypass"
-                android:summary="by Uncodin at GitHub.com"
+                android:summary="@string/pref_licence_bypass_summary"
         >
             <intent android:action="android.intent.action.VIEW"
                     android:data="https://github.com/Uncodin/bypass/blob/master/LICENSE.txt" />
