@@ -1,3 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources><string name="pref_startup_folder">開始フォルダー</string>
+<string name="pref_startup_folder_hint">メイン メニューに移動して、文字列をコピーします。</string>
+    <string name="pref_startup_title">起動時の設定</string>
+    <string name="pref_license_title">ライセンス</string>
+    <string name="pref_licence_app">アプリ ライセンス</string>
+    <string name="pref_licence_app_summary">このアプリケーションは、GNU 一般公衆ライセンス v3+ でライセンスされます</string>
+    <string name="pref_licence_bypasses_summary">GitHub.com で commit451 により</string>
+    <string name="pref_licence_bypass_summary">GitHub.com で Uncodin により</string>
 </resources>
