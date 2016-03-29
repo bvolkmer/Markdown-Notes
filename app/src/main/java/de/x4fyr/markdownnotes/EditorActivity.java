@@ -46,7 +46,7 @@ public class EditorActivity extends AppCompatActivity {
 
     private boolean filenameChangeEditorAction(TextView view, int actionId, KeyEvent event) {
         if (actionId == EditorInfo.IME_ACTION_GO
-            && event.getAction() == KeyEvent.ACTION_DOWN && !event.isCanceled()) {
+                && (event == null || (event.getAction() == KeyEvent.ACTION_DOWN && !event.isCanceled()))) {
             File newFile = new File(folder.getAbsolutePath() + "/" + filenameEditText.getText().toString().trim());
             if (note.getFile().compareTo(newFile) != 0 && newFile.exists() ) {
                 Toast.makeText(mainContext, R.string.toast_file_folder_exists, Toast.LENGTH_SHORT).show();
