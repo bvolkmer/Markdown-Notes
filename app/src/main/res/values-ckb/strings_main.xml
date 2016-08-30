@@ -1,2 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="main_location">شوێن:</string>
+    <string name="main_edit">دەستکاری</string>
+    <string name="main_delete">سڕینەوە</string>
+</resources>
