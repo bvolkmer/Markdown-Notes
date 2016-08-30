@@ -1,2 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="app_name">Markdown-Notes</string>
+
+    <string name="action_settings">ڕێکخستنەکان</string>
+    <string name="title_activity_editor">دەستکاریکەر</string>
+    <string name="title_activity_settings">ڕێکخستنەکان</string>
+    <string name="title_activity_permission">مۆڵەتپێدانی پێویستە</string>
+
+</resources>
