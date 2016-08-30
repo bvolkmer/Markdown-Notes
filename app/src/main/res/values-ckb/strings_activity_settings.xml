@@ -1,2 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="pref_startup_folder">بوخچەی ستارت ئەپ</string>
+    <string name="pref_startup_title">ڕێخستنەکانی ستارت ئەپ</string>
+    <string name="pref_license_title">ڕێپێدان</string>
+    <string name="pref_licence_app">ڕێپێدانی نەرمەواڵە</string>
+    <string name="pref_licence_app_summary">ئەم نەرمەواڵەیە ڕێپێدراوە لەژێر GNU GENERAL PUBLIC LICENCE v3+</string>
+    <string name="pref_licence_bypass_summary">بەهۆی یونیکۆد لە GitHub.com</string>
+<string name="pref_licence_bypasses_summary">بەهۆی commit451 لە GitHub.com</string>
+    <string name="pref_startup_folder_hint">گواستنەوە لە پێڕستی سەرەکی و لەبەرگرتنەوەی ڕیزبەندەکە.</string>
+    </resources>
