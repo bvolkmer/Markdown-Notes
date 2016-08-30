@@ -1,2 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="permission_title">ئەم نەرمەواڵەیە مۆڵەتی پێویستە بۆ چالاک کردنی!</string>
+    <string name="permission_button">مۆڵەتپێدانی دانپێدانراو</string>
+</resources>
