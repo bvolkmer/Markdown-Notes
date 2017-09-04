@@ -1,2 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="app_name">Markdown-Нотатки</string>
+
+    <string name="action_settings">Параметри</string>
+    <string name="title_activity_editor">Редактор</string>
+    <string name="title_activity_settings">Параметри</string>
+    <string name="title_activity_permission">Необхідний дозвіл</string>
+
+</resources>
