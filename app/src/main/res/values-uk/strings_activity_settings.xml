@@ -1,2 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="pref_startup_folder">Папка запуску</string>
+    <string name="pref_startup_folder_hint">Перейдіть у головне меню та скопіюйте рядок.</string>
+    <string name="pref_startup_title">Параметри запуску</string>
+    <string name="pref_license_title">Ліцензії</string>
+    <string name="pref_licence_app">Ліцензія на додаток</string>
+    <string name="pref_licence_app_summary">Ця програма ліцензована під GNU GENERAL PUBLIC LICENCE v3+</string>
+    <string name="pref_licence_bypasses_summary">з commit451 на GitHub.com</string>
+    <string name="pref_licence_bypass_summary">з Uncodin на GitHub.com</string>
+</resources>
