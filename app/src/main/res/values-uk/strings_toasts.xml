@@ -1,2 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="toast_file_folder_exists">Файл або папка з таким іменем вже існує.</string>
+    <string name="toast_folder_does_not_exists">Папка %1$s вже існує.</string>
+    <string name="toast_same_filename_entered">Введено те саме ім\'я файлу.</string>
+    <string name="toast_file_move_successful">Файл успішно переміщено.</string>
+    <string name="toast_file_move_unsuccessful">Файл не можна перемістити.</string>
+    <string name="toast_file_create_successful">Файл успішно створений.</string>
+    <string name="toast_file_create_unsuccessful">Файл неможливо створити.</string>
+    <string name="toast_note_saved">Примітка збережена.</string>
+    <string name="toast_note_not_saved">Не вдалося зберегти нотатку.</string>
+    <string name="toast_not_possible">Неможливо.</string>
+    <string name="toast_no_notes_found">Записів не знайдено.
+\nПошук файлів із закінченням \".md\".</string>
+    <string name="toast_deletion_successful">Успішне видалення.</string>
+    <string name="toast_deletion_unsuccessful">Невдале видалення.</string>
+    <string name="toast_one_folder_up">.. (Вверх)</string>
+</resources>
