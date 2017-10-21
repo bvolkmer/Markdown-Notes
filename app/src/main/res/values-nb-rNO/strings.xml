@@ -1,2 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="app_name">Markdown-Notiser</string>
+
+    <string name="action_settings">Innstillinger</string>
+    <string name="title_activity_editor">Tekstbehandler</string>
+    <string name="title_activity_settings">Innstillinger</string>
+    <string name="title_activity_permission">Tilgang behøves</string>
+
+</resources>
