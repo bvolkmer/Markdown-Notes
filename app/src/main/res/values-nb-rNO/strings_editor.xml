@@ -1,2 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="editor_edit">Rediger</string>
+    <string name="editor_filename_input">Filnavn:</string>
+    <string name="editor_filename_hint">Skriv inn filnavn</string>
+</resources>
