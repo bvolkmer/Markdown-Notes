@@ -1,2 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="permission_title">Dette programmet trenger tilganger for å kjøre!</string>
+    <string name="permission_body">Siden dette programmet er tilknyttet lagring som en ekstrafunksjon, trenger du å tillate det til bruk for programmet. Hvis du ikke gjør det, kan du ikke liste opp, åpne/vise, redigere eller slette notiser, som i grunn er alle funksjonene dette programmet har. Hvis du klikker følgende knapp, vil du bli spurt om tilgang.</string>
+    <string name="permission_button">Gi tilgang</string>
+</resources>
