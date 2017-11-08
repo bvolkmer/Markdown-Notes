@@ -1,2 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="toast_file_folder_exists">Fil eller mappe med det navnet finnes allerede.</string>
+    <string name="toast_folder_does_not_exists">Mappen %1$s finnes allerede.</string>
+    <string name="toast_same_filename_entered">Samme filnavn innskrevet.</string>
+    <string name="toast_file_move_successful">Fil flyttet.</string>
+    <string name="toast_file_move_unsuccessful">Fila kunne ikke flyttes.</string>
+    <string name="toast_file_create_successful">Fil opprettet.</string>
+    <string name="toast_file_create_unsuccessful">Kunne ikke opprette fil.</string>
+    <string name="toast_note_saved">Notis lagret.</string>
+    <string name="toast_note_not_saved">Kunne ikke lagre notis.</string>
+    <string name="toast_not_possible">Ikke mulig.</string>
+    <string name="toast_no_notes_found">Ingen notater funnet. 
+\n Søker etter filer med \".md\"-endelse.</string>
+    <string name="toast_deletion_successful">Slettet</string>
+    <string name="toast_deletion_unsuccessful">Klarte ikke å slette</string>
+    <string name="toast_one_folder_up">..(Gå oppover)</string>
+</resources>
