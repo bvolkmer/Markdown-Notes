@@ -1,2 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="pref_startup_folder">Oppstartsmappe</string>
+    <string name="pref_startup_folder_hint">Naviger i hovedmenyen og kopier strengen.</string>
+    <string name="pref_startup_title">Oppstartsinnstillinger</string>
+    <string name="pref_license_title">Lisenser</string>
+    <string name="pref_licence_app">Programlisens</string>
+    <string name="pref_licence_app_summary">Dette programmet er lisensiert GNU GENERAL PUBLIC LISENS v3+</string>
+    <string name="pref_licence_bypasses_summary">av commit451 på GitHub.com</string>
+    <string name="pref_licence_bypass_summary">av Uncodin på GitHub.com</string>
+</resources>
