@@ -6,8 +6,8 @@
     <string name="toast_file_move_unsuccessful">Fila kunne ikke flyttes.</string>
     <string name="toast_file_create_successful">Fil opprettet.</string>
     <string name="toast_file_create_unsuccessful">Kunne ikke opprette fil.</string>
-    <string name="toast_note_saved">Notis lagret.</string>
-    <string name="toast_note_not_saved">Kunne ikke lagre notis.</string>
+    <string name="toast_note_saved">Notat lagret.</string>
+    <string name="toast_note_not_saved">Kunne ikke lagre notat.</string>
     <string name="toast_not_possible">Ikke mulig.</string>
     <string name="toast_no_notes_found">Ingen notater funnet. 
 \n Søker etter filer med \".md\"-endelse.</string>
