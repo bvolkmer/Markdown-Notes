@@ -2,11 +2,11 @@
 <resources>
 
     <string name="pref_startup_folder">Startup folder</string>
-    <string name="pref_startup_folder_hint">Navigate in main menu and copy the string.</string>
+    <string name="pref_startup_folder_hint">Copy the string from the main menu.</string>
     <string name="pref_startup_title">Startup Settings</string>
     <string name="pref_license_title">Licenses</string>
     <string name="pref_licence_app">App License</string>
-    <string name="pref_licence_app_summary">This application is licensed under the GNU GENERAL PUBLIC LICENCE v3+</string>
+    <string name="pref_licence_app_summary">This app is licensed under the GNU General Public License version 3 or later</string>
     <string name="pref_licence_bypasses_summary">by commit451 at GitHub.com</string>
     <string name="pref_licence_bypass_summary">by Uncodin at GitHub.com</string>
 </resources>
