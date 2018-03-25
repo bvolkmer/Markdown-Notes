@@ -11,7 +11,7 @@
     <string name="toast_not_possible">Ikke mulig.</string>
     <string name="toast_no_notes_found">Ingen notater funnet. 
 \n Søker etter filer med \".md\"-endelse.</string>
-    <string name="toast_deletion_successful">Slettet</string>
-    <string name="toast_deletion_unsuccessful">Klarte ikke å slette</string>
+    <string name="toast_deletion_successful">Slettet.</string>
+    <string name="toast_deletion_unsuccessful">Sletting mislyktes.</string>
     <string name="toast_one_folder_up">..(Gå oppover)</string>
 </resources>
