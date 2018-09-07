@@ -1,2 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="permission_title">本应用需要权限以正常运行！</string>
+    <string name="permission_body">本应用在获取、开启/查看、编辑，或删除笔记时需要内部存储权限，点击之后的按钮以授权。</string>
+    <string name="permission_button">授予权限</string>
+</resources>
