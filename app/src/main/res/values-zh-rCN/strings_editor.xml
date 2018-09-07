@@ -1,2 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="editor_edit">编辑</string>
+    <string name="editor_filename_input">文件名：</string>
+    <string name="editor_filename_hint">输入文件名</string>
+</resources>
