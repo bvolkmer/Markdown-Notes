@@ -1,2 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="toast_file_folder_exists">已存在同名文件或文件夹。</string>
+    <string name="toast_folder_does_not_exists">文件夹 %1$s 已存在。</string>
+    <string name="toast_same_filename_entered">输入的文件名与原来的相同。</string>
+    <string name="toast_file_move_successful">文件已移动。</string>
+    <string name="toast_file_move_unsuccessful">无法移动文件。</string>
+    <string name="toast_file_create_successful">文件已创建。</string>
+    <string name="toast_file_create_unsuccessful">无法创建文件。</string>
+    <string name="toast_note_saved">笔记已保存。</string>
+    <string name="toast_note_not_saved">无法保存笔记。</string>
+    <string name="toast_not_possible">无法完成此操作。</string>
+    <string name="toast_no_notes_found">找不到笔记。
+\n 正在搜索 .md 文件。</string>
+    <string name="toast_deletion_successful">已删除。</string>
+    <string name="toast_deletion_unsuccessful">删除失败。</string>
+    <string name="toast_one_folder_up">返回上层文件夹</string>
+</resources>
