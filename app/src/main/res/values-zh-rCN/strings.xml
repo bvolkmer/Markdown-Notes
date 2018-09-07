@@ -1,2 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="app_name">Markdown 笔记</string>
+
+    <string name="action_settings">设置</string>
+    <string name="title_activity_editor">编辑器</string>
+    <string name="title_activity_settings">设置</string>
+    <string name="title_activity_permission">需要权限</string>
+
+</resources>
