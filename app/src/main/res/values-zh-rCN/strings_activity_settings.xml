@@ -1,2 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<resources><string name="pref_startup_folder">默认文件夹</string>
+    <string name="pref_startup_folder_hint">可从主界面中复制文件夹路径。</string>
+    <string name="pref_startup_title">启动时</string>
+    <string name="pref_license_title">开源协议</string>
+    <string name="pref_licence_app">本应用所使用的协议</string>
+    <string name="pref_licence_app_summary">本应用遵循 GNU 通用公共开源协议 (General Public License, GPL) 版本 3 及以上版本</string>
+    <string name="pref_licence_bypasses_summary">by commit451 at GitHub.com</string>
+    <string name="pref_licence_bypass_summary">by Uncodin at GitHub.com</string>
+</resources>
