@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources><string name="permission_title">このアプリは、実行にアクセス許可が必要です!</string>
-    <string name="permission_body">このアプリはストレージに関連した機能のため、アプリケーションがストレージを使用する許可が必要です。そうしないと、メモの一覧表示、開く、表示、編集、または削除など、基本的にこのアプリに含まれるすべての機能を使用することができません。次のボタンをクリックすると、アクセス許可を与えます。</string>
+    <string name="permission_body">このアプリは、メモの一覧表示、開く、表示、編集、または削除のため、ストレージにアクセスする必要があります。次のボタンをクリックして、アクセス許可を付与してください。</string>
     <string name="permission_button">アクセス許可の付与</string>
 </resources>
