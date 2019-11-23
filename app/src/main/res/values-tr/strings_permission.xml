@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="permission_button">İzin ver</string>
+    <string name="permission_title">Bu uygulama çalışmak için izinlere ihtiyaç duymaktadır!</string>
+    <string name="permission_body">Bu uygulamanın notları listelemek, açmak/görüntülemek, düzenlemek veya silmek için depolama alanına erişmesi gerekmektedir, aşağıdaki butona tıklayın ve bunu yapma izni verin.</string>
+</resources>
