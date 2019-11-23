@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="editor_filename_hint">Dosya adını girin</string>
+    <string name="editor_filename_input">Dosya adı:</string>
+    <string name="editor_edit">Düzenle</string>
+</resources>
