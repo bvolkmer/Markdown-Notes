@@ -1,2 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="toast_file_create_successful">Dosya oluşturuldu.</string>
+    <string name="toast_note_not_saved">Not kaydedilemedi.</string>
+    <string name="toast_deletion_unsuccessful">Silme işlemi başarısız oldu.</string>
+    <string name="toast_deletion_successful">Silindi.</string>
+    <string name="toast_no_notes_found">Not bulunamadı. 
+\n \".md\" dosyaları aranıyor.</string>
+    <string name="toast_file_move_unsuccessful">Dosya taşınamadı.</string>
+    <string name="toast_folder_does_not_exists">%1$s klasörü zaten var.</string>
+    <string name="toast_file_create_unsuccessful">Dosya oluşturulamadı.</string>
+    <string name="toast_note_saved">Not kaydedildi.</string>
+    <string name="toast_not_possible">Mümkün değil.</string>
+    <string name="toast_one_folder_up">.. (Yukarı git)</string>
+    <string name="toast_file_folder_exists">Bu isimde dosya veya klasör zaten var.</string>
+    <string name="toast_same_filename_entered">Aynı dosya adı girildi.</string>
+    <string name="toast_file_move_successful">Dosya taşındı.</string>
+</resources>
