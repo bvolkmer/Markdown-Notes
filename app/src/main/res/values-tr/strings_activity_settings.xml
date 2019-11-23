@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="pref_startup_title">Başlangıç Ayarları</string>
+    <string name="pref_licence_app">Uygulama Lisansı</string>
+    <string name="pref_licence_bypasses_summary">GitHub.com\'da commit451 tarafından</string>
+    <string name="pref_startup_folder">Başlangıç klasörü</string>
+    <string name="pref_licence_bypass_summary">GitHub.com\'da Uncodin tarafından</string>
+    <string name="pref_licence_app_summary">Bu uygulama GNU Genel Kamu Lisansı sürüm 3 veya sonrası altında lisanslanmıştır</string>
+    <string name="pref_startup_folder_hint">Stringi ana menüden kopyalayın.</string>
+    <string name="pref_license_title">Lisanslar</string>
+</resources>
