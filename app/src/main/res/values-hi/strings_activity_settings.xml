@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="pref_startup_title">स्टार्टअप सेटिंग्स</string>
+    <string name="pref_licence_app">ऐप लाइसेंस</string>
+    <string name="pref_licence_bypasses_summary">GitHub.com पर commit451 द्वारा</string>
+    <string name="pref_startup_folder">स्टार्टअप फ़ोल्डर</string>
+    <string name="pref_licence_bypass_summary">GitHub.com पर Uncodin द्वारा</string>
+    <string name="pref_licence_app_summary">इस एप्लिकेशन को जीएनयू जनरल पब्लिक लाइसेंस संस्करण 3 या बाद में लाइसेंस प्राप्त है</string>
+    <string name="pref_startup_folder_hint">मुख्य मेनू से स्ट्रिंग कॉपी करें।</string>
+    <string name="pref_license_title">लाइसेंस</string>
+</resources>
