@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="pref_startup_title">स्टार्टअप सेटिंग्ज</string>
+    <string name="pref_licence_app">अ‍ॅप परवाना</string>
+    <string name="pref_licence_bypasses_summary">GitHub.com वर commit451 द्वारे</string>
+    <string name="pref_startup_folder">स्टार्टअप फोल्डर</string>
+    <string name="pref_licence_bypass_summary">GitHub.com वर Uncodin द्वारे</string>
+    <string name="pref_licence_app_summary">हा अ‍ॅप GNU सामान्य सार्वजनिक परवाना आवृत्ती 3 किंवा नंतरच्या अंतर्गत परवानाकृत आहे</string>
+    <string name="pref_startup_folder_hint">मुख्य मेनूमधून स्ट्रिंग कॉपी करा.</string>
+    <string name="pref_license_title">परवाने</string>
+</resources>
