@@ -1,17 +1,18 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="toast_file_folder_exists">پەڕگە یان بوخچە بەم ناوە بوونیان هەیە.</string>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="toast_file_folder_exists">پەڕگە یان بوخچە بەم ناوە بوونیان هەیە.</string>
     <string name="toast_folder_does_not_exists">بوخچەی %1$s بوونی هەیە.</string>
     <string name="toast_same_filename_entered">هەمان ناوی پەڕگە نووسراوە.</string>
-    <string name="toast_file_move_successful">پەڕگەکە بەسەرکەوتوویی گوازرایەوە.</string>
+    <string name="toast_file_move_successful">پەڕگەکە گوازرایەوە.</string>
     <string name="toast_file_move_unsuccessful">پەڕگەکە نەتوانرا بگوازرێتەوە.</string>
-    <string name="toast_file_create_successful">پەڕگەکە بەسەرکەوتوویی دروست کرا.</string>
+    <string name="toast_file_create_successful">پەڕگەکە دروست کرا.</string>
     <string name="toast_file_create_unsuccessful">نەتوانرا پەڕگەکە دروست بکرێت.</string>
     <string name="toast_note_saved">تێبینییەکە پاشەکەوت کرا.</string>
     <string name="toast_note_not_saved">نەتوانرا تێبینییەکە پاشەکەوت بکرێت.</string>
     <string name="toast_not_possible">ناگونجێت.</string>
     <string name="toast_no_notes_found">هیچ تێبینییەک نەدۆزرایەوە.
 بەدوایی پەڕگەکەدا بگەڕێ بە \".md\" کۆتایی هاتبێت.</string>
-    <string name="toast_deletion_successful">سڕینەوەکە سەرکەوتوو بوو.</string>
-    <string name="toast_deletion_unsuccessful">سڕینەوەکە سەرکەوتوو نەبوو.</string>
+    <string name="toast_deletion_successful">سڕایەوە.</string>
+    <string name="toast_deletion_unsuccessful">سڕینەوەکە نەبوو.</string>
     <string name="toast_one_folder_up">..)بڕۆ سەرەوە(</string>
 </resources>
