@@ -1,4 +1,6 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="main_delete">Smazat</string>
-<string name="main_edit">Upravit</string>
-    </resources>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main_delete">Smazat</string>
+    <string name="main_edit">Upravit</string>
+    <string name="main_location">Umístění:</string>
+</resources>
