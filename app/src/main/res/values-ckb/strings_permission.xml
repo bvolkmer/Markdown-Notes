@@ -1,4 +1,6 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="permission_title">ئەم نەرمەواڵەیە مۆڵەتی پێویستە بۆ چالاک کردنی!</string>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permission_title">ئەم نەرمەواڵەیە مۆڵەتی پێویستە بۆ چالاک کردنی!</string>
     <string name="permission_button">مۆڵەتپێدانی دانپێدانراو</string>
+    <string name="permission_body">ئەم بەرنامەيە گەيشتن پێويستى دەبێت بۆ كۆگا بۆ ليستە، [کردنەوە/پیشاندان]، پاكنووس بكە، يان تێبينى دەسڕێتەوە، دوگمەى داهاتوو كليك بكە، و بەخشين ڕێگەپێدان تا وا بكات.</string>
 </resources>
