@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="pref_startup_folder">Folder startowy</string>
+    <string name="pref_license_title">Licencje</string>
+    <string name="pref_licence_app">Licencja aplikacji</string>
+    <string name="pref_licence_app_summary">Ta aplikacja jest objęta licencją GNU General Public License w wersji 3 lub nowszej</string>
+    <string name="pref_licence_bypass_summary">od Uncodin z GitHub.com</string>
+</resources>
