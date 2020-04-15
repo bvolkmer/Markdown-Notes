@@ -2,7 +2,7 @@
 <resources>
     <string name="title_activity_permission">İzin gerekli</string>
     <string name="title_activity_settings">Ayarlar</string>
-    <string name="title_activity_editor">Editör</string>
+    <string name="title_activity_editor">Düzenleyici</string>
     <string name="action_settings">Ayarlar</string>
     <string name="app_name">Markdown-Notes</string>
 </resources>
