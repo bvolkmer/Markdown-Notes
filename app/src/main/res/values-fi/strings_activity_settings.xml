@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="pref_licence_bypass_summary">tekijä: Uncodin GitHub.com-sivustolla</string>
+    <string name="pref_licence_bypasses_summary">tekijä: commit451 GitHub.com-sivustolla</string>
+    <string name="pref_licence_app_summary">Tämä sovellus on lisensoitu GNU General Public License -lisenssin 3-versiolla tai uudemmalla</string>
+    <string name="pref_licence_app">Sovelluslisenssi</string>
+    <string name="pref_license_title">Lisenssit</string>
+    <string name="pref_startup_title">Käynnistysasetukset</string>
+    <string name="pref_startup_folder_hint">Kopioi merkkijono päävalikosta.</string>
+    <string name="pref_startup_folder">Käynnistyskansio</string>
+</resources>
