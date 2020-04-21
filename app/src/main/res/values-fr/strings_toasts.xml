@@ -1,2 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="toast_one_folder_up">.. (Monter)</string>
+    <string name="toast_deletion_unsuccessful">Échec de la suppression.</string>
+    <string name="toast_deletion_successful">Supprimé.</string>
+    <string name="toast_no_notes_found">Aucune note trouvée. 
+\n Recherche de fichiers « .md ».</string>
+    <string name="toast_not_possible">Impossible.</string>
+    <string name="toast_note_not_saved">Impossible d\'enregistrer la note.</string>
+    <string name="toast_note_saved">Note enregistrée.</string>
+    <string name="toast_file_create_unsuccessful">Impossible de créer le fichier.</string>
+    <string name="toast_file_create_successful">Fichier créé.</string>
+    <string name="toast_file_move_unsuccessful">Impossible de déplacer le fichier.</string>
+    <string name="toast_file_move_successful">Fichier déplacé.</string>
+    <string name="toast_same_filename_entered">Même nom de fichier entré.</string>
+    <string name="toast_folder_does_not_exists">Le dossier %1$s existe déjà.</string>
+    <string name="toast_file_folder_exists">Un fichier ou un dossier avec ce nom existe déjà.</string>
+</resources>
