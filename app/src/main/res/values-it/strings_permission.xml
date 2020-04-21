@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="permission_button">Concedi le autorizzazioni</string>
+    <string name="permission_body">Questa applicazione deve accedere allo spazio di archiviazione per elencare, aprire/visualizzare, modificare o eliminare le note; fai clic sul pulsante seguente e concedi l\'autorizzazione per eseguire questa operazione.</string>
+    <string name="permission_title">Questa applicazione ha bisogno di autorizzazioni per l\'esecuzione!</string>
+</resources>
