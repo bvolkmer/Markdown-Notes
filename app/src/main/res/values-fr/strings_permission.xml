@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="permission_button">Autoriser</string>
+    <string name="permission_body">Cette appli a besoin d\'accéder au stockage, pour lister, ouvrir/afficher, modifier ou supprimer des notes. Cliquez sur le bouton suivant et donner la permission d\'accès.</string>
+    <string name="permission_title">Cette appli a besoin de permissions pour fonctionner !</string>
+</resources>
