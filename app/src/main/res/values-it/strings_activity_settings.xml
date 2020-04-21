@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="pref_licence_bypass_summary">da Uncodin su GitHub.com</string>
+    <string name="pref_licence_bypasses_summary">da commit451 su GitHub.com</string>
+    <string name="pref_licence_app_summary">Questa applicazione è rilasciata sotto la GNU General Public License versione 3 o successiva</string>
+    <string name="pref_licence_app">Licenza dell\'applicazione</string>
+    <string name="pref_license_title">Licenze</string>
+    <string name="pref_startup_title">Impostazioni di avvio</string>
+    <string name="pref_startup_folder_hint">Copia la stringa dal menu principale.</string>
+    <string name="pref_startup_folder">Cartella di avvio</string>
+</resources>
