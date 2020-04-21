@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="title_activity_permission">Permission requise</string>
+    <string name="title_activity_settings">Paramètres</string>
+    <string name="title_activity_editor">Éditeur</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="app_name">Markdown-Notes</string>
+</resources>
