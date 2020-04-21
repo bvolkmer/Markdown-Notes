@@ -1,2 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="toast_one_folder_up">.. (Sali)</string>
+    <string name="toast_deletion_unsuccessful">Eliminazione non riuscita.</string>
+    <string name="toast_deletion_successful">Eliminata.</string>
+    <string name="toast_no_notes_found">Nessuna nota trovata. 
+\n Ricerca di file .md.</string>
+    <string name="toast_not_possible">Non è possibile.</string>
+    <string name="toast_note_not_saved">Impossibile salvare la nota.</string>
+    <string name="toast_note_saved">Nota salvata.</string>
+    <string name="toast_file_create_unsuccessful">Impossibile creare il file.</string>
+    <string name="toast_file_create_successful">File creato.</string>
+    <string name="toast_file_move_unsuccessful">Impossibile spostare il file.</string>
+    <string name="toast_file_move_successful">File spostato.</string>
+    <string name="toast_same_filename_entered">Stesso nome del file inserito.</string>
+    <string name="toast_folder_does_not_exists">La cartella %1$s esiste già.</string>
+    <string name="toast_file_folder_exists">Un file o una cartella con quel nome esiste già.</string>
+</resources>
