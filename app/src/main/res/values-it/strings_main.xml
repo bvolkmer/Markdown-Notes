@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="main_delete">Elimina</string>
+    <string name="main_edit">Modifica</string>
+    <string name="main_location">Posizione:</string>
+</resources>
