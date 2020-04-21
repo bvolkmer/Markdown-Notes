@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="title_activity_permission">Lupa tarvitaan</string>
+    <string name="title_activity_settings">Asetukset</string>
+    <string name="title_activity_editor">Muokkain</string>
+    <string name="action_settings">Asetukset</string>
+    <string name="app_name">Markdown-Notes</string>
+</resources>
