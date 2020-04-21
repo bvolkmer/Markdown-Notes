@@ -1,2 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="toast_one_folder_up">.. (Mene ylös)</string>
+    <string name="toast_deletion_unsuccessful">Poisto epäonnistui.</string>
+    <string name="toast_deletion_successful">Poistettu.</string>
+    <string name="toast_no_notes_found">Muistiinpanoja ei löytynyt.
+\n.md-tiedostoja etsitään.</string>
+    <string name="toast_not_possible">Ei mahdollista.</string>
+    <string name="toast_note_not_saved">Muistiinpanoa ei voitu tallentaa.</string>
+    <string name="toast_note_saved">Muistiinpano tallennettu.</string>
+    <string name="toast_file_create_unsuccessful">Tiedostoa ei voitu luoda.</string>
+    <string name="toast_file_create_successful">Tiedosto luotu.</string>
+    <string name="toast_file_move_unsuccessful">Tiedostoa ei voitu siirtää.</string>
+    <string name="toast_file_move_successful">Tiedosto siirretty.</string>
+    <string name="toast_same_filename_entered">Sama tiedostonimi syötetty.</string>
+    <string name="toast_folder_does_not_exists">Kansio %1$s on jo olemassa.</string>
+    <string name="toast_file_folder_exists">Tämänniminen tiedosto tai kansio on jo olemassa.</string>
+</resources>
