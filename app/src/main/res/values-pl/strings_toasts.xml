@@ -1,2 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="toast_one_folder_up">.. (w górę)</string>
+    <string name="toast_deletion_unsuccessful">Błąd usuwania.</string>
+    <string name="toast_deletion_successful">Usunięto.</string>
+    <string name="toast_no_notes_found">Nie znaleziono notatek.
+\nSzukaj plików „.md”.</string>
+    <string name="toast_not_possible">Nie jest to możliwe.</string>
+    <string name="toast_note_not_saved">Nie można zapisać notatki.</string>
+    <string name="toast_note_saved">Notatka zapisana.</string>
+    <string name="toast_file_create_unsuccessful">Nie można utworzyć pliku.</string>
+    <string name="toast_file_create_successful">Plik utworzony.</string>
+    <string name="toast_file_move_unsuccessful">Nie można przenieść pliku.</string>
+    <string name="toast_file_move_successful">Plik został przeniesiony.</string>
+    <string name="toast_same_filename_entered">Wprowadzono tą samą nazwę pliku.</string>
+    <string name="toast_folder_does_not_exists">Folder %1$s już istnieje.</string>
+    <string name="toast_file_folder_exists">Plik lub folder o tej nazwie już istnieje.</string>
+</resources>
