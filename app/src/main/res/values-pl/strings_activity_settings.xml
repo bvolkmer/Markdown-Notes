@@ -5,4 +5,7 @@
     <string name="pref_licence_app">Licencja aplikacji</string>
     <string name="pref_licence_app_summary">Ta aplikacja jest objęta licencją GNU General Public License w wersji 3 lub nowszej</string>
     <string name="pref_licence_bypass_summary">od Uncodin z GitHub.com</string>
+    <string name="pref_licence_bypasses_summary">od commit451 z GitHub.com</string>
+    <string name="pref_startup_title">Ustawienia uruchamiania</string>
+    <string name="pref_startup_folder_hint">Skopiuj ciąg z menu głównego.</string>
 </resources>
