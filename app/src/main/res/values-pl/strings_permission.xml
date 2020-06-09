@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="permission_button">Zezwól</string>
+    <string name="permission_body">Ta aplikacja potrzebuje dostępu do pamięci, aby móc wyświetlać, otwierać/przeglądać, edytować lub usuwać notatki, kliknij przycisk i udziel pozwolenia.</string>
+    <string name="permission_title">Ta aplikacja wymaga uprawnień do działania!</string>
+</resources>
