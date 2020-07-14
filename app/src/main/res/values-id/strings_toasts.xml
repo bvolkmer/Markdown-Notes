@@ -1,2 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="toast_one_folder_up">.. (Pergi ke atas)</string>
+    <string name="toast_deletion_unsuccessful">Penghapusan gagal.</string>
+    <string name="toast_deletion_successful">Terhapus.</string>
+    <string name="toast_not_possible">Tidak memungkinkan.</string>
+    <string name="toast_note_not_saved">Tidak dapat menyimpan catatan.</string>
+    <string name="toast_note_saved">Catatan telah disimpan.</string>
+    <string name="toast_file_create_unsuccessful">Tidak dapat membuat berkas.</string>
+    <string name="toast_file_create_successful">Berkas telah dibuat.</string>
+    <string name="toast_file_move_unsuccessful">Tidak dapat memindahkan berkas.</string>
+    <string name="toast_file_move_successful">Berkas dipindahkan.</string>
+    <string name="toast_same_filename_entered">Nama berkas yang sama dimasukkan.</string>
+    <string name="toast_folder_does_not_exists">Folder %1$s sudah ada.</string>
+    <string name="toast_file_folder_exists">Berkas atau folder dengan nama itu sudah ada.</string>
+</resources>
