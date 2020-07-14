@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="pref_licence_bypass_summary">oleh Uncodin di GitHub.com</string>
+    <string name="pref_licence_bypasses_summary">oleh commit451 di GitHub.com</string>
+    <string name="pref_licence_app">Lisensi Aplikasi</string>
+    <string name="pref_license_title">Lisensi</string>
+</resources>
