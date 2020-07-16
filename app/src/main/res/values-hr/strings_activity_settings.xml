@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="pref_licence_bypass_summary">od Uncodin na GitHub.com</string>
+    <string name="pref_licence_bypasses_summary">od commit451 na GitHub.com</string>
+    <string name="pref_licence_app_summary">Ovaj je program licenciran pod GNU općom javnom licencom verzije 3 ili novijom</string>
+    <string name="pref_licence_app">Licenca programa</string>
+    <string name="pref_license_title">Licence</string>
+    <string name="pref_startup_title">Postavke pokretanja</string>
+    <string name="pref_startup_folder_hint">Kopiraj znakovni niz iz glavnog izbornika.</string>
+    <string name="pref_startup_folder">Početna mapa</string>
+</resources>
