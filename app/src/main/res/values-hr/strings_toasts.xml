@@ -1,2 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="toast_one_folder_up">… (Idi gore)</string>
+    <string name="toast_deletion_unsuccessful">Brisanje neuspjelo.</string>
+    <string name="toast_deletion_successful">Izbrisano.</string>
+    <string name="toast_no_notes_found">Napomene nisu pronađene.
+\n Traži se „.md” datoteka.</string>
+    <string name="toast_not_possible">Nije moguće.</string>
+    <string name="toast_note_not_saved">Neuspjelo spremanje napomene.</string>
+    <string name="toast_note_saved">Napomena je spremljena.</string>
+    <string name="toast_file_create_unsuccessful">Neuspjelo stvaranje datoteke.</string>
+    <string name="toast_file_create_successful">Datoteka je stvorena.</string>
+    <string name="toast_file_move_unsuccessful">Neuspjelo premještanje datoteke.</string>
+    <string name="toast_file_move_successful">Datoteka je premještena.</string>
+    <string name="toast_same_filename_entered">Upisano je isto ime datoteke.</string>
+    <string name="toast_folder_does_not_exists">Mapa %1$s već postoji.</string>
+    <string name="toast_file_folder_exists">Datoteka ili mapa s tim imenom već postoji.</string>
+</resources>
