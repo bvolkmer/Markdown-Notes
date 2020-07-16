@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="permission_title">Za pokretanje, ovaj program treba dozvole!</string>
+    <string name="permission_button">Dozvoli</string>
+    <string name="permission_body">Ovaj program treba pristup memoriji za pregledavanje, otvaranje/prikaz, uređivanje ili brisanje napomena. Pritisni sljedeći gumb i dozvoli pristup.</string>
+</resources>
