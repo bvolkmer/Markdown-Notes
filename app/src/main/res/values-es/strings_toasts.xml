@@ -1,2 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="toast_one_folder_up">.. (Subir)</string>
+    <string name="toast_deletion_unsuccessful">Falló la eliminación.</string>
+    <string name="toast_deletion_successful">Se eliminó.</string>
+    <string name="toast_no_notes_found">No se encontró ninguna nota.
+\n Buscando archivos «.md».</string>
+    <string name="toast_not_possible">No es posible.</string>
+    <string name="toast_note_not_saved">No se pudo guardar la nota.</string>
+    <string name="toast_note_saved">Se guardó la nota.</string>
+    <string name="toast_file_create_unsuccessful">No se pudo crear el archivo.</string>
+    <string name="toast_file_create_successful">Se creó el archivo.</string>
+    <string name="toast_file_move_unsuccessful">No se pudo trasladar el archivo.</string>
+    <string name="toast_file_move_successful">Se trasladó el archivo.</string>
+    <string name="toast_same_filename_entered">Se introdujo el mismo nombre de archivo.</string>
+    <string name="toast_folder_does_not_exists">Ya existe la carpeta %1$s.</string>
+    <string name="toast_file_folder_exists">Ya existe un archivo o una carpeta con este nombre.</string>
+</resources>
