@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="permission_button">Conceder permisos</string>
+    <string name="permission_body">La aplicación necesita acceder al almacenamiento para enumerar, abrir/ver, editar y eliminar notas. Pulse en este botón y conceda el permiso para efectuar esas acciones.</string>
+    <string name="permission_title">Esta aplicación necesita permisos para ejecutarse.</string>
+</resources>
