@@ -2,4 +2,5 @@
 <resources>
     <string name="permission_button">Izinkan</string>
     <string name="permission_title">Aplikasi ini membutuhkan izin untuk berjalan!</string>
+    <string name="permission_body">Aplikasi ini membutuhkan akses ke penyimpanan untuk membuka/melihat, menyunting, atau menghapus catatan, klik tombol ini, untuk memberikan izin untuk melakukan hal-hal ini.</string>
 </resources>
