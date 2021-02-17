@@ -4,4 +4,8 @@
     <string name="pref_licence_bypasses_summary">oleh commit451 di GitHub.com</string>
     <string name="pref_licence_app">Lisensi Aplikasi</string>
     <string name="pref_license_title">Lisensi</string>
+    <string name="pref_licence_app_summary">Aplikasi ini dilisensikan di bawah GNU General Public Licences versi 3 atau yang terbaru</string>
+    <string name="pref_startup_title">Pengaturan Startup</string>
+    <string name="pref_startup_folder_hint">Salin string dari menu utama.</string>
+    <string name="pref_startup_folder">Folder startup</string>
 </resources>
