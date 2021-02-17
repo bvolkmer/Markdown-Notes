@@ -13,4 +13,6 @@
     <string name="toast_same_filename_entered">Nama berkas yang sama dimasukkan.</string>
     <string name="toast_folder_does_not_exists">Folder %1$s sudah ada.</string>
     <string name="toast_file_folder_exists">Berkas atau folder dengan nama itu sudah ada.</string>
+    <string name="toast_no_notes_found">Tidak ada catatan yang ditemukan. 
+\n Mencari file \".md\".</string>
 </resources>
