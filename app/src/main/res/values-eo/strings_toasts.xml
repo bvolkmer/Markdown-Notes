@@ -1,2 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="toast_one_folder_up">.. (Iri supren)</string>
+    <string name="toast_deletion_unsuccessful">Forigo malsukcesis.</string>
+    <string name="toast_deletion_successful">Forigita.</string>
+    <string name="toast_no_notes_found">Neniu noto troviĝis.
+\n Serĉante dosierojn de sufikso «.md».</string>
+    <string name="toast_not_possible">Ne eblas.</string>
+    <string name="toast_note_not_saved">Ne eblis konservi noton.</string>
+    <string name="toast_note_saved">Noto konserviĝis.</string>
+    <string name="toast_file_create_unsuccessful">Ne eblis krei dosieron.</string>
+    <string name="toast_file_create_successful">Dosiero kreiĝis.</string>
+    <string name="toast_file_move_unsuccessful">Ne eblis movi dosieron.</string>
+    <string name="toast_file_move_successful">Dosiero moviĝis.</string>
+    <string name="toast_same_filename_entered">Sama dosiernomo tajpiĝis.</string>
+    <string name="toast_folder_does_not_exists">La dosierujo %1$s jam ekzistas.</string>
+    <string name="toast_file_folder_exists">Dosiero aŭ dosierujo kun tiu nomo jam ekzistas.</string>
+</resources>
