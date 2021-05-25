@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="pref_startup_folder_hint">Kopii la tekston el la ĉefmenuo.</string>
+    <string name="pref_licence_app_summary">Ĉi tiu programo estas rajtigita laŭ versio 3 aŭ pli posta de la Ĝenerala Publika Permesilo (GPL) de GNU</string>
+    <string name="pref_licence_bypass_summary">de Uncodin ĉe GitHub.com</string>
+    <string name="pref_licence_bypasses_summary">de commit451 ĉe GitHub.com</string>
+    <string name="pref_startup_title">Lanĉaj agordoj</string>
+    <string name="pref_startup_folder">Lanĉa dosierujo</string>
+    <string name="pref_license_title">Permesiloj</string>
+    <string name="pref_licence_app">Permesilo de programo</string>
+</resources>
