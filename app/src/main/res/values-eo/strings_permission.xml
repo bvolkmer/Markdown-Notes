@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="permission_body">Ĉi tiu programo bezonas aliri al konservejo por listigi, malfermi/vidi, redakti aŭ forigi notojn. Alklaku la jenan butonon, kaj donu la permeson fari tion.</string>
+    <string name="permission_button">Permesi</string>
+    <string name="permission_title">Ĉi tiu programo bezonas permesojn por funkciado!</string>
+</resources>
