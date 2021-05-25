@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="title_activity_permission">Permeso bezonata</string>
+    <string name="title_activity_settings">Agordoj</string>
+    <string name="title_activity_editor">Redaktilo</string>
+    <string name="action_settings">Agordoj</string>
+    <string name="app_name">Markdown-Notoj</string>
+</resources>
