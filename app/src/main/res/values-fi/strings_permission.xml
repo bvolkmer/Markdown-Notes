@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="permission_body">Tämä sovellus tarvitsee pääsyn tallennustilaan luodakseen luetteloja, avatakseen/tarkastellakseen, muokatakseen tai poistaakseen muistiinpanoja; klikkaa seuraavaa painiketta ja myönnä luvan.</string>
+    <string name="permission_body">Tämä sovellus tarvitsee pääsyn tallennustilaan luodakseen luetteloja, avatakseen/tarkastellakseen, muokatakseen tai poistaakseen muistiinpanoja; klikkaa seuraavaa painiketta ja myönnä lupa tähän.</string>
     <string name="permission_title">Tämä sovellus tarvitsee käyttöoikeudet toimiakseen!</string>
     <string name="permission_button">Myönnä luvat</string>
 </resources>
