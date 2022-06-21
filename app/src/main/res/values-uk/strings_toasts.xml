@@ -1,6 +1,7 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="toast_file_folder_exists">Файл або папка з таким іменем вже існує.</string>
-    <string name="toast_folder_does_not_exists">Папка %1$s вже існує.</string>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="toast_file_folder_exists">Файл або тека з таким іменем вже існує.</string>
+    <string name="toast_folder_does_not_exists">Тека %1$s вже існує.</string>
     <string name="toast_same_filename_entered">Введено те саме ім\'я файлу.</string>
     <string name="toast_file_move_successful">Файл переміщено.</string>
     <string name="toast_file_move_unsuccessful">Не вдалося перемістити файл.</string>
