@@ -1,5 +1,6 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="pref_startup_folder">Папка запуску</string>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_startup_folder">Тека запуску</string>
     <string name="pref_startup_folder_hint">Скопіюйте рядок з головного меню.</string>
     <string name="pref_startup_title">Параметри запуску</string>
     <string name="pref_license_title">Ліцензії</string>
