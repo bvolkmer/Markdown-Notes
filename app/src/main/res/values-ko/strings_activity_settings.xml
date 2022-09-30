@@ -6,4 +6,6 @@
     <string name="pref_startup_folder_hint">기본 메뉴에서 문자열을 복사합니다.</string>
     <string name="pref_startup_title">시작 설정</string>
     <string name="pref_license_title">라이선스</string>
+    <string name="pref_licence_bypasses_summary">GitHub.com의 commit451</string>
+    <string name="pref_licence_bypass_summary">GitHub.com의 Uncoden</string>
 </resources>
