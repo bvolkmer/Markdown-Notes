@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="pref_startup_folder">시작 폴더</string>
+    <string name="pref_licence_app">앱 라이선스</string>
+    <string name="pref_licence_app_summary">이 앱은 GNU General Public License 버전 3 이상에 따라 사용이 허가되었습니다</string>
+    <string name="pref_startup_folder_hint">기본 메뉴에서 문자열을 복사합니다.</string>
+    <string name="pref_startup_title">시작 설정</string>
+    <string name="pref_license_title">라이선스</string>
+</resources>
